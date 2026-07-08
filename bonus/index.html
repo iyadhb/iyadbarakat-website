@@ -9,7 +9,7 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png">
-<meta name="description" content="Redeem your Reader Bonus code from The Consulting Prompt Playbook and unlock the Bonus Vault: all 6 frameworks and all 100 consulting super-prompts.">
+<meta name="description" content="Redeem your Reader Bonus code to unlock the 6 frameworks free, plus your reader-only discount on the full 100-prompt Vault.">
 <meta name="robots" content="noindex">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -114,6 +114,15 @@
   #success-box .check{font-size:36px;margin-bottom:10px;}
   #success-box h2{color:var(--navy);margin-bottom:8px;}
   #success-box p{color:var(--grey);font-size:14.5px;margin-bottom:22px;}
+  #success-box .bonus-block{margin-bottom:26px;}
+  #success-box .bonus-block h3,#success-box .vault-card h3{font-size:16px;color:var(--navy);margin-bottom:6px;}
+  #success-box .vault-card{
+    background:var(--paper);border:1px solid var(--line);border-radius:8px;
+    padding:22px 20px;
+  }
+  #success-box .vault-card p{margin-bottom:16px;}
+  #success-box .vault-card s{color:var(--grey);text-decoration:line-through;margin-left:4px;}
+  #success-box .btn{width:100%;text-align:center;}
 
   .whats-inside{max-width:640px;margin:56px auto 0;}
   .whats-inside h3{font-size:15px;text-transform:uppercase;letter-spacing:1px;color:var(--gold);text-align:center;margin-bottom:20px;}
@@ -189,18 +198,32 @@
       <div id="success-box">
         <div class="check">🎯</div>
         <h2>You're in.</h2>
-        <p>Your Bonus Vault is ready — all 6 frameworks and all 100 consulting super-prompts.</p>
-        <a class="btn btn-navy" id="vault-link" href="#" target="_blank" rel="noopener">Open the Bonus Vault →</a>
+        <p>Here's your free reader bonus — plus your reader-only price on the full Vault.</p>
+
+        <!-- TODO: replace FREE_FRAMEWORKS_URL with standalone page -->
+        <div class="bonus-block">
+          <h3>Your free reader bonus — the 6 Frameworks</h3>
+          <p style="margin-bottom:14px;">All six consulting frameworks in full — GOAL, RCAS, RISE, CRISP-C, CAPE, and IDEA.</p>
+          <a class="btn btn-navy" id="frameworks-link" href="#" target="_blank" rel="noopener">Open the 6 Frameworks →</a>
+        </div>
+
+        <div class="vault-card">
+          <h3>Get the full Vault — reader price</h3>
+          <p>Readers get the complete library of all 100 consulting super-prompts for <b>$19</b><s>$39</s>.</p>
+          <a class="btn btn-gold" id="vault-link" href="#" target="_blank" rel="noopener">Get the Vault — $19 →</a>
+        </div>
       </div>
     </div>
 
     <div class="whats-inside">
-      <h3>What's inside</h3>
+      <h3>What's inside your free bonus</h3>
       <ul>
-        <li>All 6 frameworks in full — GOAL, RCAS, RISE, CRISP-C, CAPE, IDEA</li>
-        <li>All 100 consulting super-prompts, organized by chapter</li>
-        <li>Every prompt's framework, template, and why it works</li>
-        <li>Adaptation tips for making each prompt your own</li>
+        <li><b>GOAL</b> — your daily driver for fast, structured thinking</li>
+        <li><b>RCAS</b> — deep professional work that demands rigor</li>
+        <li><b>RISE</b> — elevating analysis into strategic synthesis</li>
+        <li><b>CRISP-C</b> — content and communication that lands</li>
+        <li><b>CAPE</b> — structured research and analysis</li>
+        <li><b>IDEA</b> — innovation and next-practice thinking</li>
       </ul>
     </div>
 
@@ -225,7 +248,9 @@
   document.getElementById('year').textContent = new Date().getFullYear();
 
   var VALID_CODE = "PRINTREADER";
-  var VAULT_URL = "https://sleepy-truffle-d74.notion.site/The-Consulting-Prompt-Playbook-Bonus-Vault-39264d803d2c81688d6dd64ee5541180";
+  // TODO: replace FREE_FRAMEWORKS_URL with standalone page (currently points at the combined Notion page)
+  var FREE_FRAMEWORKS_URL = "https://sleepy-truffle-d74.notion.site/The-6-Frameworks-39264d803d2c813996f6dd2dd4d82b03";
+  var VAULT_READER_URL = "https://iyad.lemonsqueezy.com/checkout/buy/efc6fe74-0a2e-441c-8831-675862e47618?checkout[discount_code]=VAULTREADER";
 
   function tryUnlock(){
     var input = document.getElementById('code-input');
@@ -237,7 +262,8 @@
       errorMsg.style.display = 'none';
       var successBox = document.getElementById('success-box');
       successBox.style.display = 'block';
-      document.getElementById('vault-link').href = VAULT_URL;
+      document.getElementById('frameworks-link').href = FREE_FRAMEWORKS_URL;
+      document.getElementById('vault-link').href = VAULT_READER_URL;
     } else {
       errorMsg.style.display = 'block';
     }
