@@ -105,6 +105,8 @@
   .hero h1 span{color:var(--gold-light);}
   .hero p.lead{font-size:17px;color:#D9E0EA;max-width:520px;margin-bottom:30px;}
   .cta-row{display:flex;gap:14px;flex-wrap:wrap;}
+  .hero-trust{margin-top:20px;font-size:12.5px;color:rgba(255,255,255,0.6);max-width:520px;line-height:1.55;}
+  .hero-trust em{font-style:italic;}
   .btn{
     display:inline-block;padding:13px 26px;border-radius:3px;
     font-weight:600;font-size:14px;letter-spacing:0.2px;
@@ -121,6 +123,13 @@
     box-shadow:0 20px 40px rgba(0,0,0,0.35);
   }
   .hero-photo img{width:100%;height:100%;object-fit:cover;}
+
+  /* PROOF STRIP */
+  .proof{background:#fff;border-bottom:1px solid var(--line);padding:14px 0;}
+  .proof-row{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;font-size:13px;color:var(--grey);line-height:1.7;}
+  .proof-item{padding:0 6px;font-weight:500;}
+  .proof-item + .proof-item::before{content:"·";margin-right:12px;color:var(--line);}
+  .proof .stars{color:var(--gold);letter-spacing:1px;}
 
   /* SECTION GENERIC */
   section{padding:88px 0;}
@@ -183,6 +192,15 @@
   .tk-card p{font-size:14px;color:var(--grey);flex:1;margin-bottom:18px;}
   .tk-btn{width:100%;text-align:center;}
   .tk-soon .tk-label{color:var(--grey);}
+  .tk-featured{position:relative;}
+  .tk-badge{
+    position:absolute;top:-11px;left:22px;
+    background:var(--gold);color:#fff;
+    font-size:10.5px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;
+    padding:4px 11px;border-radius:20px;box-shadow:0 3px 8px rgba(184,134,11,0.3);
+  }
+  .tk-rating{font-size:13px;color:var(--gold);letter-spacing:1px;margin:-6px 0 16px;}
+  .tk-guarantee{text-align:center;font-size:13.5px;color:var(--grey);margin-top:30px;}
 
   /* VAULT */
   .vault{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
@@ -242,6 +260,7 @@
     section{padding:64px 0;}
     .hero-inner{flex-direction:column-reverse;text-align:center;gap:32px;padding:48px 28px 56px;}
     .hero p.lead{margin-left:auto;margin-right:auto;}
+    .hero-trust{margin-left:auto;margin-right:auto;}
     .cta-row{justify-content:center;}
     .hero-photo{flex:0 0 180px;width:180px;height:180px;}
     .about-grid, .book-grid{flex-direction:column;}
@@ -294,16 +313,28 @@
 <section class="hero">
   <div class="hero-inner">
     <div class="hero-text">
-      <div class="kicker">Digital Transformation &amp; AI Consulting</div>
-      <h1>Bridging deep consulting<br>expertise with the <span>AI era</span>.</h1>
-      <p class="lead">26+ years leading digital transformation across the UK, Europe, and the Middle East. Author of <em>The Consulting Prompt Playbook</em>.</p>
+      <div class="kicker">For consultants &amp; strategy professionals</div>
+      <h1>Make AI think like a senior partner — not a <span>search box</span>.</h1>
+      <p class="lead">The six frameworks and 100 prompts that turn AI into a consulting-grade thinking partner. Start free.</p>
       <div class="cta-row">
-        <a class="btn btn-gold" href="#book">Get the Book</a>
-        <a class="btn btn-outline" href="#contact">Get in Touch</a>
+        <a class="btn btn-gold" href="#newsletter">Get the 6 Frameworks — free →</a>
+        <a class="btn btn-outline" href="#toolkit">Explore the toolkit →</a>
       </div>
+      <p class="hero-trust">By Iyad Barakat — author of <em>The Consulting Prompt Playbook</em> · Cambridge &amp; MIT executive education · 26+ years in consulting.</p>
     </div>
     <div class="hero-photo">
       <img src="/assets/iyad-barakat.jpg" alt="Iyad Barakat" width="480" height="480" fetchpriority="high" decoding="async">
+    </div>
+  </div>
+</section>
+
+<section class="proof">
+  <div class="wrap">
+    <div class="proof-row">
+      <!-- TODO: add Amazon rating when available: <span class="proof-item"><span class="stars">★★★★★</span> [AMAZON_RATING] on Amazon</span> -->
+      <span class="proof-item">Cambridge &amp; MIT executive education</span>
+      <span class="proof-item">Featured on TV &amp; radio</span>
+      <!-- TODO: add subscriber count when real: <span class="proof-item">[SUBSCRIBER_COUNT] professionals on the list</span> -->
     </div>
   </div>
 </section>
@@ -319,28 +350,32 @@
       <div class="tk-card">
         <div class="tk-label">Free</div>
         <h3>The 6 Frameworks</h3>
-        <p>The six consulting frameworks in full — your starting point.</p>
+        <p>Stop getting generic answers. Six thinking structures that make AI reason like a consultant.</p>
         <a class="btn btn-ghost tk-btn" href="#newsletter">Get them free →</a>
       </div>
       <div class="tk-card">
         <div class="tk-label">$5.99 Kindle · $16.99 Paperback</div>
         <h3>The Consulting Prompt Playbook</h3>
-        <p>The book: 6 frameworks + 100 prompts, fully explained.</p>
+        <p>The full method: 6 frameworks + 100 prompts, explained with real consulting examples.</p>
+        <!-- TODO: add rating line when Amazon rating is real: <div class="tk-rating">★★★★★ [AMAZON_RATING]</div> -->
+        <!-- omit until real; do not show a fake number -->
         <a class="btn btn-navy tk-btn" href="https://www.amazon.com/dp/B0G5HBCZG2" target="_blank" rel="noopener">Buy on Amazon →</a>
       </div>
       <div class="tk-card tk-featured">
+        <div class="tk-badge">Most popular</div>
         <div class="tk-label">$39 <span class="tk-pill">Book readers $19</span></div>
         <h3>The Vault</h3>
-        <p>All 100 consulting super-prompts in a Notion workspace you copy and keep.</p>
+        <p>Stop rebuilding the same deliverables. 100 ready-to-run prompts — market entry, board decks, due diligence — each with its framework, template, and how to adapt it.</p>
         <a class="btn btn-gold tk-btn" href="https://iyad.lemonsqueezy.com/checkout/buy/efc6fe74-0a2e-441c-8831-675862e47618" target="_blank" rel="noopener">Get the Vault →</a>
       </div>
       <div class="tk-card">
         <div class="tk-label">$79</div>
         <h3>The Operating System</h3>
-        <p>The frameworks as a custom AI assistant, plus 12 done-for-you engagement playbooks and 100 advanced prompts.</p>
+        <p>The whole system working for you: an AI assistant pre-loaded with the frameworks, 12 done-for-you playbooks, and 100 advanced prompts. Blank page to board-ready in minutes.</p>
         <a class="btn btn-navy tk-btn" href="https://iyad.lemonsqueezy.com/checkout/buy/f859db53-faaf-4764-a01b-53eadc6224d3" target="_blank" rel="noopener">Get it →</a>
       </div>
     </div>
+    <p class="tk-guarantee">Every purchase is backed by a 14-day, no-questions-asked money-back guarantee.</p>
   </div>
 </section>
 
