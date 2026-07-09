@@ -69,9 +69,11 @@
   }
   nav{display:flex;align-items:center;justify-content:space-between;padding:16px 28px;max-width:1080px;margin:0 auto;position:relative;}
   .brand{font-family:'Playfair Display',serif;font-weight:700;font-size:19px;letter-spacing:0.3px;color:var(--navy);}
-  .navlinks{display:flex;gap:28px;font-size:14px;font-weight:500;}
+  .navlinks{display:flex;align-items:center;gap:28px;font-size:14px;font-weight:500;}
   .navlinks a{color:var(--grey);transition:color .2s;}
   .navlinks a:hover{color:var(--navy);}
+  .navlinks a.nav-cta{padding:8px 16px;font-size:13px;color:#fff;}
+  .navlinks a.nav-cta:hover{color:#fff;transform:none;}
   .nav-toggle{display:none;background:none;border:0;cursor:pointer;padding:8px;margin:-8px;line-height:0;}
   .nav-toggle span{display:block;width:24px;height:2px;background:var(--navy);border-radius:2px;transition:transform .22s ease, opacity .22s ease;}
   .nav-toggle span+span{margin-top:6px;}
@@ -295,14 +297,11 @@
   <nav>
     <div class="brand">Iyad Barakat</div>
     <div class="navlinks">
+      <a href="#frameworks">Frameworks</a>
+      <a href="#book">The Book</a>
       <a href="#toolkit">The Toolkit</a>
       <a href="#about">About</a>
-      <a href="#book">The Book</a>
-      <a href="#vault">The Vault</a>
-      <a href="#frameworks">Frameworks</a>
-      <a href="/bonus/">Reader Bonus</a>
-      <a href="#newsletter">Newsletter</a>
-      <a href="#contact">Contact</a>
+      <a class="btn btn-gold nav-cta" href="#newsletter">Get the Frameworks →</a>
     </div>
     <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
       <span></span><span></span><span></span>
@@ -366,13 +365,13 @@
         <div class="tk-label">$39 <span class="tk-pill">Book readers $19</span></div>
         <h3>The Vault</h3>
         <p>Stop rebuilding the same deliverables. 100 ready-to-run prompts — market entry, board decks, due diligence — each with its framework, template, and how to adapt it.</p>
-        <a class="btn btn-gold tk-btn" href="https://iyad.lemonsqueezy.com/checkout/buy/efc6fe74-0a2e-441c-8831-675862e47618" target="_blank" rel="noopener">Get the Vault →</a>
+        <a class="btn btn-gold tk-btn" href="https://iyad.lemonsqueezy.com/checkout/buy/efc6fe74-0a2e-441c-8831-675862e47618" target="_blank" rel="noopener">Unlock the Vault →</a>
       </div>
       <div class="tk-card">
         <div class="tk-label">$79</div>
         <h3>The Operating System</h3>
         <p>The whole system working for you: an AI assistant pre-loaded with the frameworks, 12 done-for-you playbooks, and 100 advanced prompts. Blank page to board-ready in minutes.</p>
-        <a class="btn btn-navy tk-btn" href="https://iyad.lemonsqueezy.com/checkout/buy/f859db53-faaf-4764-a01b-53eadc6224d3" target="_blank" rel="noopener">Get it →</a>
+        <a class="btn btn-navy tk-btn" href="https://iyad.lemonsqueezy.com/checkout/buy/f859db53-faaf-4764-a01b-53eadc6224d3" target="_blank" rel="noopener">Get the Operating System →</a>
       </div>
     </div>
     <p class="tk-guarantee">Every purchase is backed by a 14-day, no-questions-asked money-back guarantee.</p>
@@ -428,7 +427,7 @@
     </div>
     <div class="vault-cta">
       <div class="vault-price">$39</div>
-      <a class="btn btn-gold" href="https://iyad.lemonsqueezy.com/checkout/buy/efc6fe74-0a2e-441c-8831-675862e47618" target="_blank" rel="noopener">Get the Vault →</a>
+      <a class="btn btn-gold" href="https://iyad.lemonsqueezy.com/checkout/buy/efc6fe74-0a2e-441c-8831-675862e47618" target="_blank" rel="noopener">Unlock the Vault →</a>
     </div>
   </div>
 </section>
@@ -483,7 +482,7 @@
 </section>
 
 <footer>
-  © <span id="year"></span> Iyad Barakat. All rights reserved. · <a href="/privacy/">Privacy</a>
+  <a href="/bonus/">Reader Bonus</a> · <a href="#contact">Contact</a> · <a href="/privacy/">Privacy</a> · © <span id="year"></span> Iyad Barakat. All rights reserved.
 </footer>
 
 <script>
