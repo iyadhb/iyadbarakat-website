@@ -77,6 +77,17 @@ const breadcrumbSchema = {
         By {author} · <time datetime={publishDate.toISOString()}>{fmt(publishDate)}</time>
         {updatedDate && <> · Updated {fmt(updatedDate)}</>}
       </p>
+      {heroImage && (
+        <img
+          class="hero"
+          src={heroImage}
+          alt={title}
+          width="1200"
+          height="630"
+          loading="eager"
+          decoding="async"
+        />
+      )}
       {tldr && (
         <p class="tldr"><strong>TL;DR —</strong> {tldr}</p>
       )}
@@ -95,6 +106,7 @@ const breadcrumbSchema = {
   .crumbs a { color: var(--navy); }
   .post h1 { font-size: clamp(28px, 5vw, 38px); color: var(--navy); line-height: 1.2; margin-bottom: 12px; }
   .post-meta { font-size: 13.5px; color: var(--grey); margin-bottom: 26px; }
+  .hero { display: block; width: 100%; height: auto; aspect-ratio: 1200 / 630; border-radius: 8px; margin: 0 0 30px; background: var(--line); }
   .tldr {
     background: #fff; border-left: 3px solid var(--gold); border-radius: 4px;
     padding: 16px 20px; margin-bottom: 34px; font-size: 15.5px; color: var(--ink); line-height: 1.6;
