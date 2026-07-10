@@ -5,8 +5,7 @@ import { defineConfig } from 'tinacms';
 const branch =
   process.env.TINA_BRANCH ||
   process.env.CF_PAGES_BRANCH ||
-  process.env.HEAD ||
-  'main';
+  'astro-migration';
 
 export default defineConfig({
   branch,
