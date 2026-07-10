@@ -1,0 +1,180 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = 'Reader Bonus — The Consulting Prompt Playbook | Iyad Barakat';
+const description =
+  'Redeem your Reader Bonus code to unlock the 6 frameworks free, plus your reader-only discount on the full 100-prompt Vault.';
+---
+<BaseLayout title={title} description={description} noindex={true}>
+  <section class="hero bonus-hero">
+    <div class="hero-inner">
+      <div class="kicker">Reader Bonus</div>
+      <h1>Your <span>reader perks</span>.</h1>
+      <p class="lead">Enter the code from your copy of The Consulting Prompt Playbook to unlock your frameworks and your reader-only price on the Vault.</p>
+    </div>
+  </section>
+
+  <section class="bonus-section">
+    <div class="wrap">
+      <div class="unlock-card">
+        <div id="form-box">
+          <h2>Enter your code</h2>
+          <p>Case doesn't matter — just type the code exactly as printed in your book.</p>
+          <div class="unlock-row">
+            <input type="text" id="code-input" placeholder="e.g. YOURCODE" autocomplete="off" spellcheck="false" />
+            <button class="btn btn-gold" id="unlock-btn" type="button">Unlock</button>
+          </div>
+          <div id="error-msg">That code doesn't look right. Double-check the Reader Bonus page in your book, or email <a href="mailto:info@iyadbarakat.com">info@iyadbarakat.com</a>.</div>
+        </div>
+        <div id="success-box">
+          <div class="check">🎯</div>
+          <h2>You're in.</h2>
+          <p>Here's your free reader bonus — plus your reader-only price on the full Vault.</p>
+
+          <div class="bonus-block">
+            <h3>Your free reader bonus — the 6 Frameworks</h3>
+            <p style="margin-bottom:14px;">All six consulting frameworks in full — GOAL, RCAS, RISE, CRISP-C, CAPE, and IDEA.</p>
+            <a class="btn btn-navy" id="frameworks-link" href="#" target="_blank" rel="noopener">Open the 6 Frameworks →</a>
+          </div>
+
+          <div class="vault-card">
+            <h3>Get the full Vault — reader price</h3>
+            <p>Readers get the complete library of all 100 consulting super-prompts for <b>$19</b><s>$39</s>.</p>
+            <a class="btn btn-gold" id="vault-link" href="#" target="_blank" rel="noopener">Get the Vault — $19 →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="whats-inside">
+        <h3>What's inside your free bonus</h3>
+        <ul>
+          <li><b>GOAL</b> — your daily driver for fast, structured thinking</li>
+          <li><b>RCAS</b> — deep professional work that demands rigor</li>
+          <li><b>RISE</b> — elevating analysis into strategic synthesis</li>
+          <li><b>CRISP-C</b> — content and communication that lands</li>
+          <li><b>CAPE</b> — structured research and analysis</li>
+          <li><b>IDEA</b> — innovation and next-practice thinking</li>
+        </ul>
+      </div>
+
+      <div class="support-note">
+        Questions or access issues? Email <a href="mailto:info@iyadbarakat.com">info@iyadbarakat.com</a>.<br />
+        Personal license for one reader. For team access, get in touch.
+      </div>
+
+      <div class="newsletter-block">
+        <h3>Want more?</h3>
+        <p>Get notified when new frameworks, tools, and prompt packs launch — no spam, unsubscribe anytime.</p>
+        <script is:inline async data-uid="e13384b663" src="https://iyad-barakat.kit.com/e13384b663/index.js"></script>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  // Reader-bonus code gate — preserved exactly from the original site.
+  const VALID_CODE = 'PRINTREADER';
+  const FREE_FRAMEWORKS_URL =
+    'https://sleepy-truffle-d74.notion.site/The-6-Frameworks-Reader-Bonus-39764d803d2c8128863df78129ad796a';
+  const VAULT_READER_URL =
+    'https://iyad.lemonsqueezy.com/checkout/buy/efc6fe74-0a2e-441c-8831-675862e47618?checkout[discount_code]=VAULTREADER';
+
+  const input = document.getElementById('code-input') as HTMLInputElement | null;
+  const unlockBtn = document.getElementById('unlock-btn');
+
+  function tryUnlock() {
+    if (!input) return;
+    const entered = input.value.trim().toUpperCase();
+    const errorMsg = document.getElementById('error-msg');
+    if (entered === VALID_CODE) {
+      (document.getElementById('form-box') as HTMLElement).style.display = 'none';
+      if (errorMsg) errorMsg.style.display = 'none';
+      (document.getElementById('success-box') as HTMLElement).style.display = 'block';
+      (document.getElementById('frameworks-link') as HTMLAnchorElement).href = FREE_FRAMEWORKS_URL;
+      (document.getElementById('vault-link') as HTMLAnchorElement).href = VAULT_READER_URL;
+    } else if (errorMsg) {
+      errorMsg.style.display = 'block';
+    }
+  }
+
+  unlockBtn?.addEventListener('click', tryUnlock);
+  input?.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') tryUnlock();
+  });
+</script>
+
+<style>
+  /* Bonus page centered hero variant (overrides the split homepage hero) */
+  .bonus-hero .hero-inner {
+    display: block;
+    padding: 72px 28px 64px;
+    max-width: 720px;
+    margin: 0 auto;
+    text-align: center;
+    gap: 0;
+  }
+  .bonus-hero h1 { font-size: clamp(28px, 6vw, 38px); line-height: 1.2; margin-bottom: 16px; }
+  .bonus-hero p.lead { font-size: 16.5px; max-width: 520px; margin: 0 auto; }
+
+  .bonus-section { padding: 64px 0; }
+
+  .unlock-card {
+    max-width: 560px; margin: -40px auto 0;
+    background: #fff; border: 1px solid var(--line); border-radius: 10px;
+    box-shadow: 0 24px 48px rgba(31,58,95,0.14);
+    padding: 36px 32px; position: relative;
+  }
+  .unlock-card h2 { font-size: 20px; color: var(--navy); margin-bottom: 8px; }
+  .unlock-card p { font-size: 14.5px; color: var(--grey); margin-bottom: 22px; }
+  .unlock-row { display: flex; gap: 10px; flex-wrap: wrap; }
+  #code-input {
+    flex: 1; min-width: 180px;
+    border: 1.5px solid var(--line); border-radius: 4px;
+    padding: 13px 14px; font-size: 15px; font-family: inherit;
+    letter-spacing: 1px; text-transform: uppercase;
+    color: var(--ink); background: var(--paper);
+  }
+  #code-input:focus { outline: none; border-color: var(--navy); }
+  .unlock-card .btn {
+    padding: 13px 24px; border-radius: 4px; border: none; cursor: pointer; font-family: inherit;
+  }
+  .unlock-card .btn-navy { width: 100%; text-align: center; }
+  #error-msg { display: none; color: #B23A3A; font-size: 13.5px; margin-top: 12px; }
+  #error-msg a { color: var(--navy); font-weight: 600; }
+  #success-box { display: none; text-align: center; }
+  #success-box .check { font-size: 36px; margin-bottom: 10px; }
+  #success-box h2 { color: var(--navy); margin-bottom: 8px; }
+  #success-box p { color: var(--grey); font-size: 14.5px; margin-bottom: 22px; }
+  #success-box .bonus-block { margin-bottom: 26px; }
+  #success-box .bonus-block h3, #success-box .vault-card h3 { font-size: 16px; color: var(--navy); margin-bottom: 6px; }
+  #success-box .vault-card {
+    background: var(--paper); border: 1px solid var(--line); border-radius: 8px; padding: 22px 20px;
+  }
+  #success-box .vault-card p { margin-bottom: 16px; }
+  #success-box .vault-card s { color: var(--grey); text-decoration: line-through; margin-left: 4px; }
+  #success-box .btn { width: 100%; text-align: center; }
+
+  .whats-inside { max-width: 640px; margin: 56px auto 0; }
+  .whats-inside h3 { font-size: 15px; text-transform: uppercase; letter-spacing: 1px; color: var(--gold); text-align: center; margin-bottom: 20px; }
+  .whats-inside ul { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 12px 24px; }
+  .whats-inside li { font-size: 14.5px; color: var(--ink); padding-left: 22px; position: relative; }
+  .whats-inside li::before { content: "✓"; position: absolute; left: 0; color: var(--gold); font-weight: 700; }
+
+  .support-note { text-align: center; font-size: 13.5px; color: var(--grey); margin-top: 40px; }
+  .support-note a { color: var(--navy); font-weight: 600; }
+
+  .newsletter-block {
+    max-width: 480px; margin: 48px auto 0; padding: 28px 24px;
+    background: #fff; border: 1px solid var(--line); border-radius: 8px; text-align: center;
+  }
+  .newsletter-block h3 { font-size: 16px; color: var(--navy); margin-bottom: 6px; }
+  .newsletter-block p { font-size: 13.5px; color: var(--grey); margin-bottom: 16px; }
+
+  @media (max-width: 560px) {
+    .whats-inside ul { grid-template-columns: 1fr; }
+    .unlock-card { margin-left: 16px; margin-right: 16px; padding: 28px 22px; }
+  }
+  @media (max-width: 400px) {
+    .bonus-hero .hero-inner { padding: 56px 20px 52px; }
+  }
+</style>

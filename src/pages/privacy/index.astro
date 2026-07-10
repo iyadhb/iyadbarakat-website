@@ -1,0 +1,43 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = 'Privacy Policy | Iyad Barakat';
+const description = 'Privacy policy for iyadbarakat.com.';
+---
+<BaseLayout title={title} description={description}>
+  <main class="privacy-main">
+    <h1>Privacy Policy</h1>
+    <p class="updated">Last updated: July 2026</p>
+
+    <p>This site (iyadbarakat.com) is a personal site for Iyad Barakat's consulting work and his book, The Consulting Prompt Playbook. Here's what happens with your data when you visit.</p>
+
+    <h2>What this site collects</h2>
+    <p>Not much. This site uses Google Analytics (GA4) to understand traffic, and Kit to power the newsletter signup box. Here's the detail:</p>
+    <ul>
+      <li>Google Analytics (GA4) collects standard web analytics data — pages viewed, approximate location, device and browser type — via cookies, so I can see how many people visit and what they're interested in. It doesn't identify you personally.</li>
+      <li>If you sign up for the newsletter, your email address (and first name, if you provide it) is stored by Kit (the email provider I use) so I can send you updates. You can unsubscribe at any time via the link in any email.</li>
+      <li>The "Email" and "Contact" links open your own email client — nothing is transmitted to or stored by this site.</li>
+      <li>The Reader Bonus code page (/bonus/) checks your code entirely in your browser. No code, email, or other input you type there is sent anywhere or stored.</li>
+      <li>Links to Amazon and LinkedIn take you to those companies' own sites, which have their own privacy policies.</li>
+    </ul>
+
+    <h2>Hosting</h2>
+    <p>This site is hosted on Cloudflare Pages. Cloudflare may collect standard server logs (such as IP address and browser type) as part of operating its hosting infrastructure. See <a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener">Cloudflare's Privacy Policy</a> for details.</p>
+
+    <h2>Changes to this policy</h2>
+    <p>If what this site collects ever changes, this page will be updated to reflect it, and the "Last updated" date above will change.</p>
+
+    <h2>Questions</h2>
+    <p>Email <a href="mailto:info@iyadbarakat.com">info@iyadbarakat.com</a> with any privacy questions.</p>
+  </main>
+</BaseLayout>
+
+<style>
+  .privacy-main { max-width: 760px; margin: 0 auto; padding: 56px 28px 80px; line-height: 1.7; }
+  .privacy-main h1 { font-size: 32px; color: var(--navy); margin-bottom: 8px; }
+  .privacy-main .updated { color: var(--grey); font-size: 13.5px; margin-bottom: 36px; }
+  .privacy-main h2 { font-size: 19px; color: var(--navy); margin: 32px 0 10px; }
+  .privacy-main p, .privacy-main li { font-size: 15px; color: var(--ink); margin-bottom: 12px; }
+  .privacy-main ul { padding-left: 22px; margin-bottom: 12px; }
+  .privacy-main a { color: var(--navy); }
+</style>

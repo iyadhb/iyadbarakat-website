@@ -1,0 +1,31 @@
+---
+interface Props {
+  author?: string;
+}
+const { author = 'Iyad Barakat' } = Astro.props;
+---
+<aside class="author-box">
+  <img class="author-avatar" src="/assets/iyad-barakat.jpg" alt={author} width="64" height="64" loading="lazy" decoding="async" />
+  <div>
+    <p class="author-name">{author}</p>
+    <p class="author-bio">
+      Digital transformation &amp; AI consultant, 26+ years in consulting. Author of
+      <em>The Consulting Prompt Playbook</em>. Cambridge &amp; MIT executive education.
+      <a href="/#about">More about Iyad →</a>
+    </p>
+  </div>
+</aside>
+<style>
+  .author-box {
+    display: flex; gap: 16px; align-items: flex-start;
+    margin: 44px 0 8px; padding: 20px 22px;
+    background: #fff; border: 1px solid var(--line); border-radius: 10px;
+  }
+  .author-avatar {
+    width: 64px; height: 64px; border-radius: 50%; object-fit: cover;
+    flex: 0 0 64px; border: 2px solid rgba(212,160,23,0.5);
+  }
+  .author-name { font-weight: 700; color: var(--navy); font-size: 15px; margin-bottom: 4px; }
+  .author-bio { font-size: 13.5px; color: var(--grey); line-height: 1.6; }
+  .author-bio a { color: var(--navy); font-weight: 600; }
+</style>

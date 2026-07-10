@@ -1,0 +1,150 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import ProofStrip from '../components/ProofStrip.astro';
+import ToolkitCards from '../components/ToolkitCards.astro';
+
+const title = 'Iyad Barakat — Digital Transformation & AI Consulting';
+const description =
+  'Iyad Barakat is a digital transformation and consulting leader with 26+ years of experience, author of The Consulting Prompt Playbook.';
+
+// JSON-LD: ProfilePage + Person (E-E-A-T signals for search & AI answers).
+const personSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'ProfilePage',
+  mainEntity: {
+    '@type': 'Person',
+    name: 'Iyad Barakat',
+    jobTitle: 'Digital Transformation & AI Consultant',
+    description:
+      'Digital transformation and consulting leader with 26+ years of experience; author of The Consulting Prompt Playbook.',
+    url: 'https://iyadbarakat.com/',
+    image: 'https://iyadbarakat.com/assets/iyad-barakat.jpg',
+    sameAs: [
+      'https://www.linkedin.com/in/iyadbarakat/',
+      'https://www.amazon.com/dp/B0G5HBCZG2',
+    ],
+    alumniOf: [
+      { '@type': 'CollegeOrUniversity', name: 'University of Cambridge' },
+      { '@type': 'CollegeOrUniversity', name: 'Massachusetts Institute of Technology' },
+    ],
+    knowsAbout: [
+      'Digital transformation',
+      'AI consulting',
+      'Management consulting',
+      'Strategy',
+      'Prompt engineering for consultants',
+    ],
+  },
+};
+---
+<BaseLayout title={title} description={description} schema={personSchema}>
+  <Hero />
+  <ProofStrip />
+  <ToolkitCards />
+
+  <section class="about" id="about">
+    <div class="wrap about-grid">
+      <div class="about-text" style="flex:1">
+        <div class="kicker" style="color:var(--gold);margin-bottom:10px;">About</div>
+        <h2 style="font-size:clamp(22px,4.4vw,28px);color:var(--navy);margin-bottom:20px;">
+          A strategist at the intersection of technology and human judgment.
+        </h2>
+        <p>Iyad Barakat is a digital transformation and consulting leader with more than 26 years of experience helping organizations navigate change — across nearly three decades in London and, more recently, the Middle East.</p>
+        <p>A strategist with executive education in digital transformation and disruption from the University of Cambridge, plus executive training from MIT and Emeritus in design thinking, he has spent his career at the intersection of technology, strategy, and human judgment.</p>
+        <p>Iyad has appeared on television and radio and written extensively on digital transformation and innovation. Palestinian-American and now based in the Middle East after 28 years in London, he brings a genuinely global lens to how consulting, technology, and the Middle East intersect.</p>
+        <div class="badges">
+          <span class="badge">Cambridge — Exec. Ed., Digital Transformation</span>
+          <span class="badge">MIT — Design Thinking</span>
+          <span class="badge">Emeritus — Digital Transformation</span>
+          <span class="badge">AgilePM Practitioner</span>
+          <span class="badge">Systematic Inventive Thinking</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="book" id="book">
+    <div class="wrap book-grid">
+      <div class="book-cover">
+        <img src="/assets/book-cover.jpg" alt="The Consulting Prompt Playbook — book cover" width="627" height="1000" loading="lazy" decoding="async" />
+      </div>
+      <div class="book-info">
+        <div class="kicker">The Book</div>
+        <h2>The Consulting Prompt Playbook</h2>
+        <p>Supercharge your thinking, elevate client impact, and accelerate your consulting career with AI-powered prompts. Six proprietary frameworks and 100 structured prompts, built for every stage of the consulting lifecycle — from ambitious analyst to seasoned partner.</p>
+        <div class="price-row">
+          <div class="price-card">Kindle<b>$5.99</b></div>
+          <div class="price-card">Paperback<b>$16.99</b></div>
+        </div>
+        <div class="book-cta">
+          <a class="btn btn-navy" href="https://www.amazon.com/dp/B0G5HBCZG2" target="_blank" rel="noopener">Buy on Amazon</a>
+          <a class="btn btn-ghost" href="https://www.amazon.com/review/create-review?asin=B0G5HBCZG2" target="_blank" rel="noopener">Leave a Review</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="vault" id="vault">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="kicker">The Vault</div>
+        <h2>The Vault — 100 Consulting Super-Prompts</h2>
+        <p>Every prompt from the Playbook, ready to use in a Notion workspace you copy and keep — each with its framework, template, and adaptation notes.</p>
+      </div>
+      <div class="vault-cta">
+        <div class="vault-price">$39</div>
+        <a class="btn btn-gold" href="https://iyad.lemonsqueezy.com/checkout/buy/efc6fe74-0a2e-441c-8831-675862e47618" target="_blank" rel="noopener">Unlock the Vault →</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="frameworks" id="frameworks">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="kicker">Inside the Playbook</div>
+        <h2>Six frameworks. One hundred prompts.</h2>
+        <p>A structured system for using AI as a genuine thinking partner in consulting work — not a shortcut, a multiplier.</p>
+      </div>
+      <div class="fw-grid">
+        <div class="fw-card"><span class="fw-tag">GOAL</span><h3>Your Daily Driver</h3><p>The everyday framework for fast, structured thinking under time pressure.</p></div>
+        <div class="fw-card"><span class="fw-tag">RCAS</span><h3>Deep Professional Work</h3><p>For engagements that demand rigor, nuance, and defensible analysis.</p></div>
+        <div class="fw-card"><span class="fw-tag">RISE</span><h3>Strategic Thinking</h3><p>Elevate from analysis to genuine strategic synthesis.</p></div>
+        <div class="fw-card"><span class="fw-tag">CRISP-C</span><h3>Content Creation</h3><p>From slides to stories — communication that actually lands.</p></div>
+        <div class="fw-card"><span class="fw-tag">CAPE</span><h3>Research &amp; Analysis</h3><p>Structured intelligence-gathering for high-stakes decisions.</p></div>
+        <div class="fw-card"><span class="fw-tag">IDEA</span><h3>Innovation &amp; Creative</h3><p>Breaking from best-practice thinking into genuine next-practice.</p></div>
+      </div>
+      <div style="text-align:center;margin-top:40px;">
+        <p style="color:var(--grey);font-size:14.5px;margin-bottom:14px;">Bought the book? Redeem your Reader Bonus code to unlock the 6 frameworks free — and get your reader price on the full Vault.</p>
+        <a class="btn btn-ghost" href="/bonus/">Redeem Reader Bonus</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="newsletter" id="newsletter">
+    <div class="wrap">
+      <div class="section-head" style="margin-bottom:28px;">
+        <div class="kicker">Stay Connected</div>
+        <h2>Get new frameworks and prompts as they launch.</h2>
+        <p>Get the 6 frameworks and 6 sample super-prompts free — plus new tools as they launch. No spam, unsubscribe anytime.</p>
+      </div>
+      <div class="newsletter-form">
+        <script is:inline async data-uid="e13384b663" src="https://iyad-barakat.kit.com/e13384b663/index.js"></script>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="wrap">
+      <div class="section-head" style="margin-bottom:28px;">
+        <div class="kicker">Get in Touch</div>
+        <h2>Let's start a conversation.</h2>
+      </div>
+      <div class="contact-links">
+        <a href="mailto:info@iyadbarakat.com">Email</a>
+        <a href="https://www.linkedin.com/in/iyadbarakat/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://www.amazon.com/dp/B0G5HBCZG2" target="_blank" rel="noopener">Author Page</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

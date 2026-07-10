@@ -1,0 +1,52 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const posts = (await getCollection('blog', ({ data }) => !data.draft)).sort(
+  (a, b) => b.data.publishDate.getTime() - a.data.publishDate.getTime()
+);
+
+const fmt = (d: Date) =>
+  d.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+---
+<BaseLayout
+  title="Blog — Consulting in the AI era | Iyad Barakat"
+  description="Practical notes on using AI as a consulting-grade thinking partner — frameworks, prompts, and workflows for strategy professionals."
+>
+  <section>
+    <div class="wrap">
+      <div class="section-head">
+        <div class="kicker">Blog</div>
+        <h2>Notes on consulting in the AI era</h2>
+        <p>Frameworks, prompts, and workflows for using AI as a genuine thinking partner.</p>
+      </div>
+      {posts.length === 0 ? (
+        <p style="text-align:center;color:var(--grey);">New posts coming soon.</p>
+      ) : (
+        <ul class="post-list">
+          {posts.map((p) => (
+            <li class="post-item">
+              <a href={`/blog/${p.id}/`}>
+                <h3>{p.data.title}</h3>
+                <p>{p.data.description}</p>
+                <span class="post-date">{fmt(p.data.publishDate)}</span>
+              </a>
+            </li>
+          ))}
+        </ul>
+      )}
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .post-list { list-style: none; max-width: 760px; margin: 0 auto; display: grid; gap: 18px; }
+  .post-item a {
+    display: block; background: #fff; border: 1px solid var(--line); border-radius: 10px;
+    padding: 26px 26px; transition: transform .18s, box-shadow .18s;
+  }
+  .post-item a:hover { transform: translateY(-3px); box-shadow: 0 14px 28px rgba(31,58,95,0.10); }
+  .post-item h3 { font-size: 20px; color: var(--navy); margin-bottom: 8px; line-height: 1.3; }
+  .post-item p { font-size: 14.5px; color: var(--grey); margin-bottom: 12px; }
+  .post-date { font-size: 12.5px; color: var(--gold); font-weight: 600; letter-spacing: .3px; }
+</style>

@@ -1,0 +1,38 @@
+---
+// Site header / navigation. Anchor links point at the homepage sections so the
+// nav works identically on every page (home, /bonus, /privacy, /blog).
+---
+<header>
+  <nav>
+    <a href="/" class="brand">Iyad Barakat</a>
+    <div class="navlinks">
+      <a href="/#about">About</a>
+      <a href="/#frameworks">Frameworks</a>
+      <a href="/#book">The Book</a>
+      <a href="/#toolkit">The Toolkit</a>
+      <a class="btn btn-gold nav-cta" href="/#newsletter">Start Free →</a>
+    </div>
+    <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+</header>
+<script>
+  (function () {
+    var header = document.querySelector('header');
+    var toggle = document.querySelector('.nav-toggle');
+    if (!header || !toggle) return;
+    function setOpen(open: boolean) {
+      header.classList.toggle('open', open);
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    }
+    toggle.addEventListener('click', function () {
+      setOpen(!header.classList.contains('open'));
+    });
+    document.querySelectorAll('.navlinks a').forEach(function (a) {
+      a.addEventListener('click', function () {
+        setOpen(false);
+      });
+    });
+  })();
+</script>

@@ -1,0 +1,36 @@
+---
+// Demo landing page built entirely from the reusable LandingPage template.
+// Duplicate this file (or drive it from MDX) to spin up a new campaign page.
+import LandingPage from '../../layouts/LandingPage.astro';
+
+const faq = [
+  {
+    q: 'Do I need to be technical to use these frameworks?',
+    a: 'No. The frameworks are plain-English thinking structures. If you can brief a junior analyst, you can prompt AI with them.',
+  },
+  {
+    q: 'What do I get for free?',
+    a: 'The six frameworks in full, plus six ready-to-run sample super-prompts — no payment required.',
+  },
+  {
+    q: 'Is there a money-back guarantee on the paid products?',
+    a: 'Yes — every purchase is backed by a 14-day, no-questions-asked money-back guarantee.',
+  },
+];
+---
+<LandingPage
+  title="AI for consultants — frameworks that make AI reason like a senior partner"
+  description="Free consulting frameworks and sample prompts that turn AI into a consulting-grade thinking partner. Start free."
+  kicker="For consultants & strategy professionals"
+  headline="Make AI reason like a senior partner."
+  subhead="Six consulting frameworks and 100 prompts that turn AI from a search box into a genuine thinking partner. Start free."
+  ctaText="Get the frameworks — free →"
+  ctaHref="/#newsletter"
+  showToolkit={true}
+  faq={faq}
+  noindex={true}
+>
+  <h2>Why frameworks beat one-line prompts</h2>
+  <p>Generic prompts get generic answers. A framework gives the model a role, an objective, a structure, and constraints — so it reasons the way a senior consultant would, not the way a search box does.</p>
+  <p>Start with the six free frameworks, then go deeper with the Playbook, the Vault, or the full Operating System.</p>
+</LandingPage>

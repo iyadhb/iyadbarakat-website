@@ -1,0 +1,49 @@
+---
+// Renders a visible Q&A block AND emits FAQPage JSON-LD (GEO / rich-result friendly).
+export interface FaqItem {
+  q: string;
+  a: string;
+}
+interface Props {
+  items: FaqItem[];
+  heading?: string;
+}
+const { items, heading = 'Frequently asked questions' } = Astro.props;
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: items.map((i) => ({
+    '@type': 'Question',
+    name: i.q,
+    acceptedAnswer: { '@type': 'Answer', text: i.a },
+  })),
+};
+---
+<section class="faq wrap">
+  <h2 class="faq-heading">{heading}</h2>
+  <div class="faq-list">
+    {items.map((i) => (
+      <details class="faq-item">
+        <summary>{i.q}</summary>
+        <p set:html={i.a} />
+      </details>
+    ))}
+  </div>
+</section>
+<script type="application/ld+json" set:html={JSON.stringify(schema)} />
+<style>
+  .faq { max-width: 760px; margin: 8px auto 0; }
+  .faq-heading { font-size: clamp(22px, 4.4vw, 28px); color: var(--navy); margin-bottom: 20px; }
+  .faq-item { border-bottom: 1px solid var(--line); padding: 4px 0; }
+  .faq-item summary {
+    cursor: pointer; list-style: none; padding: 14px 0;
+    font-weight: 600; color: var(--navy); font-size: 15.5px;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .faq-item summary::after { content: "+"; color: var(--gold); font-size: 20px; margin-left: 12px; }
+  .faq-item[open] summary::after { content: "–"; }
+  .faq-item summary::-webkit-details-marker { display: none; }
+  .faq-item p { font-size: 14.5px; color: var(--ink); padding: 0 0 16px; line-height: 1.7; }
+  .faq-item p a { color: var(--navy); font-weight: 600; }
+</style>
