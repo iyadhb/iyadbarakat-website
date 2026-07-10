@@ -1,0 +1,56 @@
+name: Build health check
+
+# Mirrors the Cloudflare Pages build command (tinacms build && astro build) on
+# every push to the deploy branch. If the build breaks — including a TinaCloud
+# schema-drift failure (ERR_CLOUD_CHECK_FAILED) — this job fails and GitHub emails
+# you, so a broken deploy can never again pass silently while the stale site serves.
+#
+# Requires one repo secret: TINA_TOKEN (same token as in Cloudflare).
+# Add it at: Settings → Secrets and variables → Actions → New repository secret.
+
+on:
+  push:
+    branches: [astro-migration]
+  workflow_dispatch: {}
+
+jobs:
+  build:
+    name: tina-build + astro build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build (mirrors Cloudflare's `npm run tina-build`)
+        env:
+          # Public client id — same value baked into the deployed /admin bundle.
+          PUBLIC_TINA_CLIENT_ID: 787fe908-796a-4941-a90c-5fc2c346377e
+          # Secret — must be added in repo settings (see header note above).
+          TINA_TOKEN: ${{ secrets.TINA_TOKEN }}
+        run: npm run tina-build
+
+      - name: Explain failure
+        if: failure()
+        run: |
+          {
+            echo "## ❌ Build failed — the Cloudflare deploy will fail too"
+            echo ""
+            echo "This job runs the same command as Cloudflare: \`tinacms build && astro build\`."
+            echo ""
+            echo "**Most common cause:** \`tina/config.ts\` was changed without regenerating"
+            echo "\`tina/tina-lock.json\`, so TinaCloud's indexed schema drifted"
+            echo "(\`ERR_CLOUD_CHECK_FAILED\`). Fix: regenerate the lock via \`tinacms dev\`,"
+            echo "commit \`tina/tina-lock.json\`, and push."
+            echo ""
+            echo "If the error is missing \`TINA_TOKEN\`, add it as a repo secret"
+            echo "(Settings → Secrets and variables → Actions)."
+          } >> "$GITHUB_STEP_SUMMARY"
