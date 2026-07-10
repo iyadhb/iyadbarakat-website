@@ -31,9 +31,9 @@ export default defineConfig({
         label: 'Blog Posts',
         path: 'src/content/blog',
         format: 'md',
-        ui: {
-          router: ({ document }) => `/blog/${document._sys.filename}/`,
-        },
+        // No ui.router: Astro pages aren't instrumented for Tina visual editing,
+        // so clicking a post routes straight to the working Collections form editor
+        // instead of an empty visual-editor preview.
         fields: [
           { type: 'string', name: 'title', label: 'Title', isTitle: true, required: true },
           {
