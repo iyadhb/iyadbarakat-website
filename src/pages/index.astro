@@ -38,7 +38,7 @@ const personSchema = {
   },
 };
 ---
-<BaseLayout title={title} description={description} schema={personSchema}>
+<BaseLayout title={title} description={description} schema={personSchema} ogImage={new URL('/assets/og-home.png', Astro.site).href}>
   <Hero />
   <ProofStrip />
   <ToolkitCards />
