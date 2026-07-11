@@ -10,20 +10,28 @@ export default defineConfig({
   integrations: [
     sitemap(),
     mdx(),
-    // Optimise built output at build time (images via sharp, plus CSS/HTML/SVG).
-    // Runs on every build, so any asset — including a Canva-exported hero dropped
-    // into public/assets — is compressed consistently with no per-image work.
-    // JavaScript is skipped (Astro/Vite already minify, and it avoids reprocessing
-    // the large prebuilt Tina admin bundle); the /admin output is excluded outright
-    // to leave that third-party app untouched.
+    // Image-only optimisation at build time (via sharp). Any asset — including a
+    // Canva-exported hero dropped into public/assets — is compressed consistently
+    // with no per-image work.
+    // CSS/HTML/SVG/JS compression are intentionally OFF: this library's CSS
+    // minifier strips @media queries, which silently broke every responsive
+    // breakpoint on the live site (hamburger nav, mobile layouts). Astro/Vite
+    // already minify CSS/HTML/JS correctly (with @media intact), so we only rely
+    // on this integration for images. The /admin output is excluded outright.
     compress({
       Image: true,
-      SVG: true,
-      CSS: true,
-      HTML: true,
+      CSS: false,
+      HTML: false,
+      SVG: false,
       JavaScript: false,
       Exclude: [/admin\//],
     }),
   ],
   // Static output (default) — Cloudflare Pages serves the built dist/ at the edge.
+  vite: {
+    // Target older Safari so the CSS minifier keeps traditional `max-width`
+    // media queries instead of the modern `width<=…` range syntax (which needs
+    // Safari 16.4+). Keeps responsive breakpoints working on older iPhones.
+    build: { cssTarget: ['safari13', 'chrome90', 'firefox90'] },
+  },
 });
