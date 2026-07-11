@@ -1,0 +1,77 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import FaqSection from '../../components/FaqSection.astro';
+
+const title = 'The 6 Frameworks — Free AI Prompting Frameworks for Consultants | Iyad Barakat';
+const description =
+  'Get the six consulting frameworks that make AI reason like a senior partner — plus six ready-to-run sample super-prompts. Free, delivered to your inbox.';
+
+const faq = [
+  {
+    q: 'What exactly do I get, for free?',
+    a: 'The six frameworks in full — GOAL, RCAS, RISE, CRISP-C, CAPE and IDEA — plus six ready-to-run sample super-prompts you can use today. No payment, delivered straight to your inbox.',
+  },
+  {
+    q: 'Do I need to be technical to use them?',
+    a: 'No. The frameworks are plain-English thinking structures. If you can brief a junior analyst, you can prompt AI with them.',
+  },
+  {
+    q: 'Will they work with ChatGPT, Claude, Gemini — any AI?',
+    a: 'Yes. They are model-agnostic. A framework shapes how you brief the AI, so it works with whichever tool you use.',
+  },
+  {
+    q: 'What happens after I sign up?',
+    a: 'You get the six frameworks and six sample prompts immediately, and occasional emails as new tools launch. No spam, unsubscribe anytime. When you want the full system, the Vault and the Operating System are there — but the frameworks are yours free either way.',
+  },
+];
+---
+<BaseLayout
+  title={title}
+  description={description}
+  ogImage={new URL('/assets/og-frameworks.png', Astro.site).href}
+>
+  <section class="frameworks" id="get">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="kicker">Free · No card needed</div>
+        <h2>Make AI reason like a senior partner — free.</h2>
+        <p>Most consultants get flat, generic answers from AI because they brief it like a search box. These are the six frameworks that fix that — the thinking structures that turn AI into a genuine, consulting-grade partner. Get all six, plus six ready-to-run sample super-prompts, free.</p>
+      </div>
+      <div class="newsletter-form">
+        <script is:inline async data-uid="e13384b663" src="https://iyad-barakat.kit.com/e13384b663/index.js"></script>
+      </div>
+    </div>
+  </section>
+
+  <section class="frameworks" id="whats-inside">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="kicker">What's inside</div>
+        <h2>Six frameworks, one for every kind of work.</h2>
+        <p>Each is a repeatable shape for a recurring job — so you never start from a blank prompt again.</p>
+      </div>
+      <div class="fw-grid">
+        <div class="fw-card"><span class="fw-tag">GOAL</span><h3>Your Daily Driver</h3><p>Fast, structured thinking under time pressure — the fifteen-second brief for everyday work.</p></div>
+        <div class="fw-card"><span class="fw-tag">RCAS</span><h3>Deep Professional Work</h3><p>For client deliverables that demand rigour, nuance, and defensible analysis.</p></div>
+        <div class="fw-card"><span class="fw-tag">RISE</span><h3>Strategic Thinking</h3><p>Move from analysis to genuine strategic synthesis and real options.</p></div>
+        <div class="fw-card"><span class="fw-tag">CRISP-C</span><h3>Communication</h3><p>The board narrative, the difficult message, the slide that has to land.</p></div>
+        <div class="fw-card"><span class="fw-tag">CAPE</span><h3>Research &amp; Analysis</h3><p>Structured intelligence-gathering that stays focused instead of sprawling.</p></div>
+        <div class="fw-card"><span class="fw-tag">IDEA</span><h3>Innovation</h3><p>Break from best-practice thinking into genuine next-practice.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="frameworks" id="why">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Why a framework beats a one-liner</h2>
+        <p>A generic prompt sits in a vast neighbourhood of possible answers, so the model gives you the bland statistical centre of it. A framework gives the model a role, the context it's missing, a precise ask, and a standard for what good looks like — so it reasons the way a senior consultant would, not the way a search box does. Same tool, completely different answer. Start with the six free frameworks; go deeper with the Vault or the Operating System when you're ready.</p>
+      </div>
+      <div style="text-align:center;margin-top:8px;">
+        <a class="btn btn-gold" href="#get">Get the 6 frameworks — free →</a>
+      </div>
+    </div>
+  </section>
+
+  <FaqSection items={faq} />
+</BaseLayout>

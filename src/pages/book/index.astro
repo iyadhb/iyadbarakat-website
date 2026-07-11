@@ -1,0 +1,79 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import FaqSection from '../../components/FaqSection.astro';
+
+const AMAZON_URL = 'https://www.amazon.com/dp/B0G5HBCZG2';
+
+const title = 'The Consulting Prompt Playbook — the book by Iyad Barakat';
+const description =
+  'The Consulting Prompt Playbook: six frameworks and 100 prompts that turn AI into a consulting-grade thinking partner — explained with real consulting examples. On Amazon.';
+
+const bookSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Book',
+  name: 'The Consulting Prompt Playbook',
+  author: { '@type': 'Person', name: 'Iyad Barakat', url: 'https://iyadbarakat.com/about/' },
+  url: 'https://iyadbarakat.com/book/',
+  about: 'Using AI as a consulting-grade thinking partner',
+  inLanguage: 'en',
+};
+
+const faq = [
+  {
+    q: 'What will I learn?',
+    a: 'The six frameworks — GOAL, RCAS, RISE, CRISP-C, CAPE and IDEA — that turn AI from a search box into a consulting-grade thinking partner, plus 100 prompts, all explained with real consulting examples.',
+  },
+  {
+    q: 'Do I need to be technical?',
+    a: 'No. The frameworks are plain-English thinking structures. If you can brief a junior analyst, you can use them.',
+  },
+  {
+    q: 'What do book readers get on the site?',
+    a: 'Buy the book and you can redeem your Reader Bonus code to unlock the six frameworks free, and get the reader price ($19) on the full Vault.',
+  },
+];
+---
+<BaseLayout
+  title={title}
+  description={description}
+  ogImage={new URL('/assets/og-book.png', Astro.site).href}
+  schema={bookSchema}
+>
+  <section class="book" id="book-hero">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="kicker">The Book</div>
+        <h2>The Consulting Prompt Playbook</h2>
+        <p>The full method: six frameworks and 100 prompts that turn AI into a consulting-grade thinking partner — explained with real consulting examples. The book is where the whole system started.</p>
+      </div>
+      <div class="vault-cta">
+        <div class="vault-price" style="font-size:18px;">$5.99 Kindle · $16.99 Paperback</div>
+        <a class="btn btn-navy" href={AMAZON_URL} target="_blank" rel="noopener">Buy on Amazon →</a>
+      </div>
+      <p style="text-align:center;color:var(--grey);font-size:14.5px;margin-top:16px;">Prefer to start free? <a href="/frameworks/" style="color:var(--navy);">Get the six frameworks free</a> first.</p>
+    </div>
+  </section>
+
+  <section class="frameworks" id="inside">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="kicker">Inside the book</div>
+        <h2>Six frameworks. One hundred prompts. Real examples.</h2>
+        <p>A structured system for using AI as a genuine thinking partner in consulting work — not a shortcut, a multiplier.</p>
+      </div>
+      <div class="fw-grid">
+        <div class="fw-card"><span class="fw-tag">GOAL</span><h3>Your Daily Driver</h3><p>Fast, structured thinking under time pressure.</p></div>
+        <div class="fw-card"><span class="fw-tag">RCAS</span><h3>Deep Professional Work</h3><p>Rigour, nuance and defensible analysis for client work.</p></div>
+        <div class="fw-card"><span class="fw-tag">RISE</span><h3>Strategic Thinking</h3><p>From analysis to genuine strategic synthesis.</p></div>
+        <div class="fw-card"><span class="fw-tag">CRISP-C</span><h3>Communication</h3><p>The narrative, the message, the slide that lands.</p></div>
+        <div class="fw-card"><span class="fw-tag">CAPE</span><h3>Research &amp; Analysis</h3><p>Focused intelligence-gathering for high-stakes calls.</p></div>
+        <div class="fw-card"><span class="fw-tag">IDEA</span><h3>Innovation</h3><p>From best-practice to next-practice thinking.</p></div>
+      </div>
+      <div style="text-align:center;margin-top:36px;">
+        <a class="btn btn-navy" href={AMAZON_URL} target="_blank" rel="noopener">Buy on Amazon →</a>
+      </div>
+    </div>
+  </section>
+
+  <FaqSection items={faq} />
+</BaseLayout>

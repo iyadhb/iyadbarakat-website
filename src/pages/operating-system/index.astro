@@ -1,0 +1,89 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import FaqSection from '../../components/FaqSection.astro';
+
+const OS_URL = 'https://iyad.lemonsqueezy.com/checkout/buy/f859db53-faaf-4764-a01b-53eadc6224d3';
+
+const title = 'The Operating System — Your Complete Consulting AI System | Iyad Barakat';
+const description =
+  'The whole system working for you: an AI assistant pre-loaded with the six frameworks, 12 done-for-you playbooks, and 100 advanced prompts. Blank page to board-ready in minutes.';
+
+const faq = [
+  {
+    q: 'How is this different from the Vault?',
+    a: 'The Vault gives you 100 prompts to run yourself. The Operating System runs them for you: an AI assistant pre-loaded with the frameworks, 12 done-for-you playbooks that take a task end-to-end, and 100 advanced prompts. The Vault is the toolkit; the Operating System is the whole workshop.',
+  },
+  {
+    q: 'Do I need the Vault or the book as well?',
+    a: 'No. The Operating System sits at the top of the ladder and includes everything you need — the frameworks, the playbooks, and the advanced prompt library.',
+  },
+  {
+    q: 'What are the 12 done-for-you playbooks?',
+    a: 'Complete, guided workflows for the deliverables consultants build most — market entry, board narrative, due diligence, operating model, and more — so you go from a blank page to a structured draft in minutes.',
+  },
+  {
+    q: 'How is it delivered, and which AI does it use?',
+    a: 'Instantly, as a workspace you copy and keep, with future updates included. The prompts and playbooks are model-agnostic — use them with ChatGPT, Claude or Gemini.',
+  },
+  {
+    q: 'Is there a guarantee?',
+    a: 'Yes — a 14-day, no-questions-asked money-back guarantee, like everything here.',
+  },
+];
+---
+<BaseLayout
+  title={title}
+  description={description}
+  ogImage={new URL('/assets/og-operating-system.png', Astro.site).href}
+  noindex={true}
+>
+  <section class="vault" id="os-hero">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="kicker">The Operating System</div>
+        <h2>The whole system, working for you.</h2>
+        <p>Not just prompts to run — the complete setup: an AI assistant pre-loaded with the six frameworks, 12 done-for-you playbooks that take a deliverable end-to-end, and 100 advanced prompts. Blank page to board-ready in minutes, every time.</p>
+      </div>
+      <div class="vault-cta">
+        <div class="vault-price">$79</div>
+        <a class="btn btn-gold" href={OS_URL} target="_blank" rel="noopener">Get the Operating System →</a>
+      </div>
+      <p style="text-align:center;color:var(--grey);font-size:13.5px;margin-top:14px;">14-day, no-questions-asked money-back guarantee.</p>
+    </div>
+  </section>
+
+  <section class="frameworks" id="whats-inside">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="kicker">What you get</div>
+        <h2>Everything, pre-loaded and ready.</h2>
+      </div>
+      <div class="fw-grid">
+        <div class="fw-card"><span class="fw-tag">Assistant</span><h3>Pre-loaded AI assistant</h3><p>The six frameworks built in, so it reasons like a senior consultant from the first message — no set-up.</p></div>
+        <div class="fw-card"><span class="fw-tag">Playbooks</span><h3>12 done-for-you playbooks</h3><p>Guided, end-to-end workflows for the deliverables you build most — blank page to structured draft.</p></div>
+        <div class="fw-card"><span class="fw-tag">Prompts</span><h3>100 advanced prompts</h3><p>The full library, at its most powerful — each with its framework, template and adaptation notes.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="frameworks" id="who">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>For the consultant who'd rather ship than set up.</h2>
+        <p>If the Vault is the toolkit, this is the whole workshop — assembled, wired, and running. It's for people who don't want to build the system, they want the system to build the work. Sits at the top of the ladder: everything in one place, nothing to configure.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="vault" id="buy">
+    <div class="wrap">
+      <div class="vault-cta">
+        <div class="vault-price">$79</div>
+        <a class="btn btn-gold" href={OS_URL} target="_blank" rel="noopener">Get the Operating System →</a>
+      </div>
+      <p style="text-align:center;color:var(--grey);font-size:14.5px;margin-top:24px;">Prefer to run the prompts yourself? Start with <a href="/vault/" style="color:var(--navy);">The Vault</a> — 100 prompts for $39.</p>
+    </div>
+  </section>
+
+  <FaqSection items={faq} />
+</BaseLayout>

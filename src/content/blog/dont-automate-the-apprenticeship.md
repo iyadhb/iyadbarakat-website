@@ -110,4 +110,4 @@ Cut the tasks. Keep the teaching. Don't automate the apprenticeship.
 
 ---
 
-*If this was useful, the six frameworks I mention are free — you can [get them here](/#newsletter) — and the full set of a hundred ready-to-run prompts built on them lives in [the Vault](/#toolkit).*
+*If this was useful, the six frameworks I mention are free — you can [get them here](/frameworks/) — and the full set of a hundred ready-to-run prompts built on them lives in [the Vault](/vault/).*

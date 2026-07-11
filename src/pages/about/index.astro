@@ -1,0 +1,58 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = 'About Iyad Barakat — Digital Transformation & AI Consulting';
+const description =
+  'Iyad Barakat is a digital transformation and consulting leader with 26+ years of experience and the author of The Consulting Prompt Playbook — on using AI to think and thrive, not just go faster.';
+
+const personSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: 'Iyad Barakat',
+  url: 'https://iyadbarakat.com/about/',
+  jobTitle: 'Digital Transformation & AI Consulting Leader',
+  description:
+    'Digital transformation and consulting leader with 26+ years of experience; author of The Consulting Prompt Playbook.',
+  knowsAbout: ['AI for consulting', 'Digital transformation', 'Prompting frameworks', 'Strategy', 'Generative AI'],
+  alumniOf: ['University of Cambridge', 'MIT'],
+};
+---
+<BaseLayout
+  title={title}
+  description={description}
+  ogImage={new URL('/assets/og-about.png', Astro.site).href}
+  schema={personSchema}
+>
+  <section class="about" id="about">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="kicker">About</div>
+        <h2>Iyad Barakat</h2>
+        <p>I'm a digital transformation and consulting leader with more than 26 years of experience, and the author of <a href="/book/" style="color:var(--navy);">The Consulting Prompt Playbook</a>. I write and build at the intersection of consulting and AI — with one belief running through all of it: the goal isn't to use AI to go faster, it's to think better, and to thrive with it, together with other people.</p>
+      </div>
+      <div class="section-head" style="margin-top:8px;">
+        <p>Most people met AI as a chat box and formed their opinion there. My work is about the layer underneath — the frameworks and judgment that turn a general-purpose model into a genuine, consulting-grade thinking partner, and the discipline that lets teams get real value from it rather than confident, generic noise. The book, the free frameworks, and the <a href="/blog/" style="color:var(--navy);">Insights</a> are all part of that.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="frameworks" id="background">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="kicker">Background</div>
+        <h2>Where the thinking comes from.</h2>
+      </div>
+      <div class="fw-grid">
+        <div class="fw-card"><span class="fw-tag">Experience</span><h3>26+ years</h3><p>Digital transformation and consulting across strategy, operating models and change.</p></div>
+        <div class="fw-card"><span class="fw-tag">Cambridge</span><h3>Executive Education</h3><p>Digital Transformation.</p></div>
+        <div class="fw-card"><span class="fw-tag">MIT</span><h3>Design Thinking</h3><p>Human-centred problem-solving.</p></div>
+        <div class="fw-card"><span class="fw-tag">Emeritus</span><h3>Digital Transformation</h3><p>Modern transformation practice.</p></div>
+        <div class="fw-card"><span class="fw-tag">AgilePM</span><h3>Practitioner</h3><p>Agile delivery and programme management.</p></div>
+        <div class="fw-card"><span class="fw-tag">SIT</span><h3>Systematic Inventive Thinking</h3><p>Structured innovation method.</p></div>
+      </div>
+      <div style="text-align:center;margin-top:40px;">
+        <a class="btn btn-gold" href="/frameworks/">Get the 6 frameworks — free →</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
