@@ -16,3 +16,8 @@ tina/__generated__/
 
 # reference snapshot of the old site (main already has it)
 legacy/
+
+# internal project notes (local only — not for the public repo)
+CLAUDE.md
+docs/
+PUBLISH-QUEUE.md

@@ -8,7 +8,12 @@ import compress from '@playform/compress';
 export default defineConfig({
   site: 'https://iyadbarakat.com',
   integrations: [
-    sitemap(),
+    // Keep noindex pages out of the sitemap (a sitemap must not advertise
+    // noindex URLs). /vault + /operating-system are noindex until Lemon Squeezy
+    // is live — remove this filter (and their noindex) at launch so they index.
+    sitemap({
+      filter: (page) => !/\/(vault|operating-system)\//.test(page),
+    }),
     mdx(),
     // Image-only optimisation at build time (via sharp). Any asset — including a
     // Canva-exported hero dropped into public/assets — is compressed consistently
