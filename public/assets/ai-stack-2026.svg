@@ -1,0 +1,58 @@
+<svg viewBox="0 0 1200 1560" xmlns="http://www.w3.org/2000/svg" font-family="Inter, -apple-system, sans-serif">
+  <!-- Paper background -->
+  <rect width="1200" height="1560" fill="#F7F1E1"/>
+
+  <!-- Title -->
+  <text x="600" y="96" text-anchor="middle" font-family="'Playfair Display', Georgia, serif" font-size="52" font-weight="700" fill="#1E2A3A">The Consultant&#8217;s AI Stack &#8212; 2026</text>
+  <text x="600" y="140" text-anchor="middle" font-size="21" fill="#4A5568">Four layers. Everything else is a feature or a distraction.</text>
+  <line x1="480" y1="170" x2="720" y2="170" stroke="#E2704A" stroke-width="3"/>
+
+  <!-- Layer 1 -->
+  <g>
+    <rect x="90" y="210" width="1020" height="260" rx="10" fill="#FFFFFF" stroke="#1E2A3A" stroke-width="2"/>
+    <rect x="90" y="210" width="14" height="260" rx="7" fill="#1E2A3A"/>
+    <text x="150" y="272" font-family="'Playfair Display', Georgia, serif" font-size="30" font-weight="700" fill="#1E2A3A">1 &#183; The Thinking Partner</text>
+    <text x="150" y="312" font-size="21" font-weight="600" fill="#E2704A">Claude &#183; ChatGPT &#183; Gemini &#8212; ~$20/mo</text>
+    <text x="150" y="352" font-size="20" fill="#4A5568">The model you reason with daily. Pick one, pay for it,</text>
+    <text x="150" y="382" font-size="20" fill="#4A5568">and learn how it behaves under pressure.</text>
+    <text x="150" y="432" font-size="18" font-style="italic" fill="#8A8474">Depth with one model beats dabbling with three.</text>
+  </g>
+
+  <!-- Layer 2 -->
+  <g>
+    <rect x="90" y="500" width="1020" height="260" rx="10" fill="#FFFFFF" stroke="#1E2A3A" stroke-width="2"/>
+    <rect x="90" y="500" width="14" height="260" rx="7" fill="#3B4A63"/>
+    <text x="150" y="562" font-family="'Playfair Display', Georgia, serif" font-size="30" font-weight="700" fill="#1E2A3A">2 &#183; The Research Engine</text>
+    <text x="150" y="602" font-size="21" font-weight="600" fill="#E2704A">Perplexity (the world) + NotebookLM (your documents)</text>
+    <text x="150" y="642" font-size="20" fill="#4A5568">Cited, defensible evidence &#8212; market scans on one side,</text>
+    <text x="150" y="672" font-size="20" fill="#4A5568">data-room synthesis on the other. Free&#8211;$20/mo.</text>
+    <text x="150" y="722" font-size="18" font-style="italic" fill="#8A8474">They are not competitors. You&#8217;ll want both.</text>
+  </g>
+
+  <!-- Layer 3 -->
+  <g>
+    <rect x="90" y="790" width="1020" height="260" rx="10" fill="#FFFFFF" stroke="#1E2A3A" stroke-width="2"/>
+    <rect x="90" y="790" width="14" height="260" rx="7" fill="#6B7A93"/>
+    <text x="150" y="852" font-family="'Playfair Display', Georgia, serif" font-size="30" font-weight="700" fill="#1E2A3A">3 &#183; The Meeting Layer</text>
+    <text x="150" y="892" font-size="21" font-weight="600" fill="#E2704A">Granola &#8212; ~$18/mo (Fireflies for CRM-connected teams)</text>
+    <text x="150" y="932" font-size="20" fill="#4A5568">No bot joins the call. Client conversations become</text>
+    <text x="150" y="962" font-size="20" fill="#4A5568">searchable assets instead of fading memories.</text>
+    <text x="150" y="1012" font-size="18" font-style="italic" fill="#8A8474">The most underrated tool on the list.</text>
+  </g>
+
+  <!-- Layer 4 -->
+  <g>
+    <rect x="90" y="1080" width="1020" height="260" rx="10" fill="#FFFFFF" stroke="#1E2A3A" stroke-width="2"/>
+    <rect x="90" y="1080" width="14" height="260" rx="7" fill="#C9971C"/>
+    <text x="150" y="1142" font-family="'Playfair Display', Georgia, serif" font-size="30" font-weight="700" fill="#1E2A3A">4 &#183; The Delivery Layer</text>
+    <text x="150" y="1182" font-size="21" font-weight="600" fill="#E2704A">Microsoft 365 Copilot &#183; Gamma &#8212; ~$20&#8211;30/mo</text>
+    <text x="150" y="1222" font-size="20" fill="#4A5568">Where analysis becomes something a client can approve.</text>
+    <text x="150" y="1252" font-size="20" fill="#4A5568">Storyline first &#8212; slides are the last mile, not the journey.</text>
+    <text x="150" y="1302" font-size="18" font-style="italic" fill="#8A8474">Never let the deck tool build your argument.</text>
+  </g>
+
+  <!-- Footer bar -->
+  <rect x="90" y="1390" width="1020" height="100" rx="10" fill="#1E2A3A"/>
+  <text x="600" y="1434" text-anchor="middle" font-family="'Playfair Display', Georgia, serif" font-size="26" font-weight="700" fill="#F7F1E1">The tools are the table stakes. The brief is the edge.</text>
+  <text x="600" y="1468" text-anchor="middle" font-size="17" fill="#C9971C" letter-spacing="2">IYADBARAKAT.COM &#183; THE CONSULTING PROMPT PLAYBOOK</text>
+</svg>

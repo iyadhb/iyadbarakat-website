@@ -1,0 +1,45 @@
+# Iyad Barakat — The Consulting Prompt Playbook
+
+> Iyad Barakat is a strategy consultant and the author of *The Consulting
+> Prompt Playbook*. His work helps consultants and strategy professionals use
+> AI as a rigorous thinking partner — through six prompting frameworks, a
+> library of ready-to-run prompts, and practical workflows for client-grade
+> analysis, research, meetings and deliverables.
+
+## The six frameworks
+The backbone of the method — one framework for each recurring shape of
+consulting work:
+
+- GOAL — Goal / Output / Audience & Context / Leverage. A fast daily brief.
+- RCAS — Role / Context / Ask / Style. Structured analytical prompting.
+- RISE — for iterative, multi-step reasoning and refinement.
+- CRISP-C — board-level communication and storyline.
+- CAPE — for pressure-testing and de-risking AI output.
+- IDEA — for ideation and option generation.
+
+## The book
+*The Consulting Prompt Playbook* by Iyad Barakat — the six frameworks plus 100
+super-prompts for consulting work. Available on Amazon (ASIN B0G5HBCZG2).
+
+## Products (the value ladder)
+- The Frameworks — free lead magnet; all six frameworks by email.
+- The Book — the full method, on Amazon.
+- The Vault — 100 ready-to-run super-prompts, each with template and
+  adaptation notes.
+- The Operating System — the premium, end-to-end operating system for
+  consulting with AI.
+
+## Key pages
+- https://iyadbarakat.com/ — brand hub and overview.
+- https://iyadbarakat.com/blog/ — Insights: practical essays on AI for
+  consultants (tools, frameworks, workflows).
+- https://iyadbarakat.com/frameworks/ — the free six frameworks.
+- https://iyadbarakat.com/book/ — the book.
+- https://iyadbarakat.com/vault/ — the Vault (100 super-prompts).
+- https://iyadbarakat.com/operating-system/ — the Operating System.
+- https://iyadbarakat.com/about/ — about Iyad Barakat.
+
+## Notes
+- Voice: first-person, warm, practical, British spelling.
+- Theme: humans thinking and thriving with AI and with other people.
+- Contact and subscription via the site's newsletter form.

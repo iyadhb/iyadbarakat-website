@@ -12,6 +12,7 @@ interface Props {
   heroImage?: string;
   canonical?: string;
   tldr?: string;
+  faq?: { q: string; a: string }[];
   slug: string;
 }
 
@@ -24,6 +25,7 @@ const {
   heroImage,
   canonical,
   tldr,
+  faq,
   slug,
 } = Astro.props;
 
@@ -58,6 +60,21 @@ const breadcrumbSchema = {
     { '@type': 'ListItem', position: 3, name: title, item: url },
   ],
 };
+
+// GEO: when a post supplies FAQ pairs, advertise them as FAQPage rich results.
+const faqSchema = faq && faq.length
+  ? {
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: faq.map((item) => ({
+        '@type': 'Question',
+        name: item.q,
+        acceptedAnswer: { '@type': 'Answer', text: item.a },
+      })),
+    }
+  : null;
+
+const schemas = [articleSchema, breadcrumbSchema, ...(faqSchema ? [faqSchema] : [])];
 ---
 <BaseLayout
   title={`${title} | Iyad Barakat`}
@@ -65,7 +82,7 @@ const breadcrumbSchema = {
   canonical={canonicalUrl}
   ogType="article"
   ogImage={ogImage}
-  schema={[articleSchema, breadcrumbSchema]}
+  schema={schemas}
 >
   <article class="post">
     <div class="wrap post-wrap">

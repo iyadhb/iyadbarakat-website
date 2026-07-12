@@ -14,6 +14,9 @@ const blog = defineCollection({
     canonical: z.string().url().optional(),
     // GEO / answer-first: short summary rendered bold at the very top of the post.
     tldr: z.string().optional(),
+    // GEO: optional Q&A pairs mirroring an in-body FAQ section. When present,
+    // the BlogPost layout emits FAQPage JSON-LD alongside the Article schema.
+    faq: z.array(z.object({ q: z.string(), a: z.string() })).optional(),
     draft: z.boolean().default(false),
   }),
 });
