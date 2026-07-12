@@ -143,4 +143,11 @@ const schemas = [articleSchema, breadcrumbSchema, ...(faqSchema ? [faqSchema] : 
   .prose :global(figure svg) { width: 100%; height: auto; display: block; border: 1px solid var(--line); border-radius: 8px; background: #fff; }
   .prose :global(figcaption) { font-size: 13px; color: var(--grey); text-align: center; margin-top: 10px; }
   .prose :global(code) { background: #F0EDE4; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; }
+  .prose :global(table) { width: 100%; border-collapse: collapse; margin: 30px 0; font-size: 14px; line-height: 1.5; }
+  .prose :global(th), .prose :global(td) { text-align: left; padding: 11px 14px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  .prose :global(thead th) { background: #1F1D1A; color: #fff; font-weight: 600; font-size: 12.5px; letter-spacing: 0.3px; }
+  .prose :global(tbody tr:nth-child(even)) { background: #FAF7F2; }
+  .prose :global(tbody tr:last-child td) { border-bottom: none; }
+  .prose :global(table strong) { color: var(--navy); }
+  @media (max-width: 640px) { .prose :global(table) { display: block; overflow-x: auto; } }
 </style>
