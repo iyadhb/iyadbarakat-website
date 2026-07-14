@@ -85,12 +85,10 @@ The shift is a sequence, not a leap, and it does not begin by assembling a colle
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 500" role="img" aria-label="Diagram of one bounded workflow: the human sets the brief, an AI agent does the middle work, a checkpoint sends work back or forward, a trust layer labels every claim, and the human signs.">
     <rect width="1200" height="500" fill="#FAF7F2"/>
     <text x="40" y="52" font-family="'Playfair Display', Georgia, serif" font-size="27" font-weight="700" fill="#1F1D1A">Controlled leverage: one bounded workflow</text>
-
     <!-- loop-back arrow: checkpoint sends work back to the agent -->
     <path d="M600 150 C560 96 400 96 362 150" fill="none" stroke="#D9552B" stroke-width="2.5" stroke-dasharray="6 5"/>
     <path d="M362 150 l-7 -12 l14 0 z" fill="#D9552B"/>
     <text x="481" y="86" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#D9552B">steer &amp; send back</text>
-
     <!-- Stage 1: BRIEF (human) -->
     <rect x="30" y="150" width="188" height="170" rx="10" fill="#1F1D1A"/>
     <text x="46" y="184" font-family="Inter, Arial, sans-serif" font-size="12.5" font-weight="700" letter-spacing="1.5" fill="#D9552B">1 · BRIEF</text>
@@ -99,7 +97,6 @@ The shift is a sequence, not a leap, and it does not begin by assembling a colle
     <text x="46" y="260" font-family="Inter, Arial, sans-serif" font-size="14.5" fill="#FAF7F2">boundaries and</text>
     <text x="46" y="282" font-family="Inter, Arial, sans-serif" font-size="14.5" fill="#FAF7F2">the standard.</text>
     <text x="46" y="306" font-family="Inter, Arial, sans-serif" font-size="11.5" font-style="italic" fill="#9A968E">human</text>
-
     <!-- Stage 2: AGENT WORK -->
     <rect x="268" y="150" width="188" height="170" rx="10" fill="#F5DCC0"/>
     <text x="284" y="184" font-family="Inter, Arial, sans-serif" font-size="12.5" font-weight="700" letter-spacing="1.5" fill="#B0651F">2 · AGENT WORK</text>
@@ -108,7 +105,6 @@ The shift is a sequence, not a leap, and it does not begin by assembling a colle
     <text x="284" y="260" font-family="Inter, Arial, sans-serif" font-size="14.5" fill="#1F1D1A">with sources</text>
     <text x="284" y="282" font-family="Inter, Arial, sans-serif" font-size="14.5" fill="#1F1D1A">attached.</text>
     <text x="284" y="306" font-family="Inter, Arial, sans-serif" font-size="11.5" font-style="italic" fill="#8A6A3A">agent</text>
-
     <!-- Stage 3: CHECKPOINT (persimmon signal) -->
     <rect x="506" y="150" width="188" height="170" rx="10" fill="#D9552B"/>
     <text x="522" y="184" font-family="Inter, Arial, sans-serif" font-size="12.5" font-weight="700" letter-spacing="1.5" fill="#FAF7F2">3 · CHECKPOINT</text>
@@ -117,7 +113,6 @@ The shift is a sequence, not a leap, and it does not begin by assembling a colle
     <text x="522" y="260" font-family="Inter, Arial, sans-serif" font-size="14.5" fill="#FAF7F2">correct, or let</text>
     <text x="522" y="282" font-family="Inter, Arial, sans-serif" font-size="14.5" fill="#FAF7F2">it proceed.</text>
     <text x="522" y="306" font-family="Inter, Arial, sans-serif" font-size="11.5" font-style="italic" fill="#F6D8C8">human</text>
-
     <!-- Stage 4: TRUST LAYER -->
     <rect x="744" y="150" width="188" height="170" rx="10" fill="#FFFFFF" stroke="#1F1D1A" stroke-width="2"/>
     <text x="760" y="184" font-family="Inter, Arial, sans-serif" font-size="12.5" font-weight="700" letter-spacing="1.5" fill="#1F1D1A">4 · TRUST LAYER</text>
@@ -126,7 +121,6 @@ The shift is a sequence, not a leap, and it does not begin by assembling a colle
     <text x="760" y="260" font-family="Inter, Arial, sans-serif" font-size="14.5" fill="#1F1D1A">estimated or</text>
     <text x="760" y="282" font-family="Inter, Arial, sans-serif" font-size="14.5" fill="#1F1D1A">uncertain.</text>
     <text x="760" y="306" font-family="Inter, Arial, sans-serif" font-size="11.5" font-style="italic" fill="#9A968E">verification</text>
-
     <!-- Stage 5: YOU SIGN (human) -->
     <rect x="982" y="150" width="188" height="170" rx="10" fill="#1F1D1A"/>
     <text x="998" y="184" font-family="Inter, Arial, sans-serif" font-size="12.5" font-weight="700" letter-spacing="1.5" fill="#D9552B">5 · YOU SIGN</text>
@@ -135,7 +129,6 @@ The shift is a sequence, not a leap, and it does not begin by assembling a colle
     <text x="998" y="260" font-family="Inter, Arial, sans-serif" font-size="14.5" fill="#FAF7F2">behind the</text>
     <text x="998" y="282" font-family="Inter, Arial, sans-serif" font-size="14.5" fill="#FAF7F2">recommendation.</text>
     <text x="998" y="306" font-family="Inter, Arial, sans-serif" font-size="11.5" font-style="italic" fill="#9A968E">human</text>
-
     <!-- forward arrows between stages -->
     <g fill="#1F1D1A">
       <path d="M224 235 l30 0 l0 -6 l12 8 l-12 8 l0 -6 l-30 0 z"/>
@@ -143,7 +136,6 @@ The shift is a sequence, not a leap, and it does not begin by assembling a colle
       <path d="M700 235 l30 0 l0 -6 l12 8 l-12 8 l0 -6 l-30 0 z"/>
       <path d="M938 235 l30 0 l0 -6 l12 8 l-12 8 l0 -6 l-30 0 z"/>
     </g>
-
     <text x="600" y="372" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#6B675F">The agent works the middle; a human opens and closes the loop. Autonomy is bounded on both ends.</text>
   </svg>
   <figcaption>One stage, not a whole engagement. Note how little of it is automated: the human owns the brief, the checkpoint and the signature — and the trust layer sits between the machine's confidence and the client's trust.</figcaption>
