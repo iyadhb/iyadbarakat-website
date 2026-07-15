@@ -159,7 +159,7 @@ A definition means nothing without obligations attached. The agentic consultant 
 
 Adding AI to an unchanged workflow can produce a real but limited improvement. Rebuilding selected parts of a practice around method, boundaries, direction and trust is a more fundamental change — one clients can feel. Consultants who make that change, and hold themselves to a standard the hype merchants cannot meet, need a name. Whether you claim it is up to you.
 
-The six frameworks — the briefing discipline everything above rests on — are [free here](/frameworks/). They are developed further in [The Consulting Prompt Playbook](/book/), extended into 100 ready-to-run prompts in [The Vault](/vault/), and will form part of the forthcoming [Consulting AI Operating System](/operating-system/).
+The six frameworks — the briefing discipline everything above rests on — are [free here](/frameworks/). They are developed further in [The Consulting Prompt Playbook](/book/), extended into 100 ready-to-run prompts in the companion [Prompt Vault](/vault/) for readers, and inform the [Consulting AI Operating System](/operating-system/) now in development.
 
 ## Three questions people ask
 

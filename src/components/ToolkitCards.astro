@@ -19,51 +19,46 @@ interface Props {
   heading?: string;
   subhead?: string;
   cards?: ToolkitCard[];
-  showGuarantee?: boolean;
   id?: string;
 }
 
-const VAULT_URL = 'https://iyad.lemonsqueezy.com/checkout/buy/efc6fe74-0a2e-441c-8831-675862e47618';
-const OS_URL = 'https://iyad.lemonsqueezy.com/checkout/buy/f859db53-faaf-4764-a01b-53eadc6224d3';
 const AMAZON_URL = 'https://www.amazon.com/dp/B0G5HBCZG2';
 
 const defaultCards: ToolkitCard[] = [
   {
     label: 'Free',
+    featured: true,
     title: 'The 6 Frameworks',
     body: 'Six thinking structures that make AI reason like a consultant — plus 6 ready-to-run sample super-prompts to use today.',
     ctaText: 'Get them free →',
     ctaHref: '/frameworks/',
-    ctaClass: 'btn-ghost',
+    ctaClass: 'btn-gold',
   },
   {
-    label: '$5.99 Kindle · $16.99 Paperback',
+    label: 'On Amazon',
     title: 'The Consulting Prompt Playbook',
     body: 'The full method: 6 frameworks + 100 prompts, explained with real consulting examples.',
-    ctaText: 'Buy on Amazon →',
+    ctaText: 'Get the book on Amazon →',
     ctaHref: AMAZON_URL,
     ctaClass: 'btn-navy',
     external: true,
   },
   {
-    label: '$39',
-    pill: 'Book readers $19',
-    badge: 'Most popular',
-    featured: true,
-    title: 'The Vault',
-    body: 'Stop rebuilding the same deliverables. 100 ready-to-run prompts — market entry, board decks, due diligence — each with its framework, template, and how to adapt it.',
-    ctaText: 'Unlock the Vault →',
+    label: 'For readers',
+    title: 'The Prompt Vault',
+    body: 'The 100 prompts from the book, organised by the six frameworks — a companion resource that comes with your copy. Redeem your reader code.',
+    ctaText: 'For readers →',
     ctaHref: '/vault/',
-    ctaClass: 'btn-gold',
+    ctaClass: 'btn-ghost',
     external: false,
   },
   {
-    label: '$79',
+    label: 'In development',
     title: 'The Operating System',
-    body: 'The whole system working for you: an AI assistant pre-loaded with the frameworks, 12 done-for-you playbooks, and 100 advanced prompts. Blank page to board-ready in minutes.',
-    ctaText: 'Get the Operating System →',
+    body: 'A bounded workflow system for producing defensible client work with AI. Being prepared for a small design-partner cohort.',
+    ctaText: 'Design-partner research →',
     ctaHref: '/operating-system/',
-    ctaClass: 'btn-navy',
+    ctaClass: 'btn-ghost',
     external: false,
   },
 ];
@@ -73,7 +68,6 @@ const {
   heading = 'From the book to your complete AI system.',
   subhead = 'Everything you need to put the frameworks to work — start free, go as deep as you like.',
   cards = defaultCards,
-  showGuarantee = true,
   id = 'toolkit',
 } = Astro.props;
 ---
@@ -102,8 +96,5 @@ const {
         </div>
       ))}
     </div>
-    {showGuarantee && (
-      <p class="tk-guarantee">Every purchase is backed by a 14-day, no-questions-asked money-back guarantee.</p>
-    )}
   </div>
 </section>

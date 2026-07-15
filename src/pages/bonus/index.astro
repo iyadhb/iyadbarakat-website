@@ -3,14 +3,14 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 
 const title = 'Reader Bonus — The Consulting Prompt Playbook | Iyad Barakat';
 const description =
-  'Redeem your Reader Bonus code to unlock the 6 frameworks free, plus your reader-only discount on the full 100-prompt Vault.';
+  'Redeem your Reader Bonus code to unlock the six frameworks and your companion Prompt Vault — the 100 prompts from The Consulting Prompt Playbook.';
 ---
 <BaseLayout title={title} description={description} noindex={true}>
   <section class="hero bonus-hero">
     <div class="hero-inner">
       <div class="kicker">Reader Bonus</div>
       <h1>Your <span>reader perks</span>.</h1>
-      <p class="lead">Enter the code from your copy of The Consulting Prompt Playbook to unlock your frameworks and your reader-only price on the Vault.</p>
+      <p class="lead">Enter the code from your copy of The Consulting Prompt Playbook to unlock your frameworks and your companion Prompt Vault.</p>
     </div>
   </section>
 
@@ -29,18 +29,23 @@ const description =
         <div id="success-box">
           <div class="check">🎯</div>
           <h2>You're in.</h2>
-          <p>Here's your free reader bonus — plus your reader-only price on the full Vault.</p>
+          <p>Here's your free reader bonus — plus how to get your companion Prompt Vault.</p>
 
           <div class="bonus-block">
-            <h3>Your free reader bonus — the 6 Frameworks</h3>
+            <h3>Your reader bonus — the 6 Frameworks</h3>
             <p style="margin-bottom:14px;">All six consulting frameworks in full — GOAL, RCAS, RISE, CRISP-C, CAPE, and IDEA.</p>
             <a class="btn btn-navy" id="frameworks-link" href="#" target="_blank" rel="noopener">Open the 6 Frameworks →</a>
           </div>
 
           <div class="vault-card">
-            <h3>Get the full Vault — reader price</h3>
-            <p>Readers get the complete library of all 100 consulting super-prompts for <b>$19</b><s>$39</s>.</p>
-            <a class="btn btn-gold" id="vault-link" href="#" target="_blank" rel="noopener">Get the Vault — $19 →</a>
+            <h3>Get your Prompt Vault</h3>
+            <p>The full library of 100 consulting super-prompts — your reader companion to the book. Give us your email and we'll send your Vault link.</p>
+            <!--
+              TODO (Iyad): replace this mailto with the Kit form that applies the
+              `book-reader-vault` tag on submit and triggers the automation that
+              emails the Vault Notion link. Paste the form's data-uid here.
+            -->
+            <a class="btn btn-gold" id="vault-link" href="mailto:info@iyadbarakat.com?subject=Prompt%20Vault%20link%20request&body=I've%20redeemed%20my%20reader%20code%20—%20please%20send%20my%20Prompt%20Vault%20link.">Request my Vault link →</a>
           </div>
         </div>
       </div>
@@ -76,8 +81,6 @@ const description =
   const VALID_CODE = 'PRINTREADER';
   const FREE_FRAMEWORKS_URL =
     'https://sleepy-truffle-d74.notion.site/The-6-Frameworks-Reader-Bonus-39764d803d2c8128863df78129ad796a';
-  const VAULT_READER_URL =
-    'https://iyad.lemonsqueezy.com/checkout/buy/efc6fe74-0a2e-441c-8831-675862e47618?checkout[discount_code]=VAULTREADER';
 
   const input = document.getElementById('code-input') as HTMLInputElement | null;
   const unlockBtn = document.getElementById('unlock-btn');
@@ -91,7 +94,6 @@ const description =
       if (errorMsg) errorMsg.style.display = 'none';
       (document.getElementById('success-box') as HTMLElement).style.display = 'block';
       (document.getElementById('frameworks-link') as HTMLAnchorElement).href = FREE_FRAMEWORKS_URL;
-      (document.getElementById('vault-link') as HTMLAnchorElement).href = VAULT_READER_URL;
     } else if (errorMsg) {
       errorMsg.style.display = 'block';
     }

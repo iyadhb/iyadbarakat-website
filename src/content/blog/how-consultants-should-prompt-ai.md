@@ -118,7 +118,7 @@ You don't need a course or a subscription to change this. You need one small hab
 
 Before you type your next real prompt, spend fifteen seconds answering three questions: *Who do I want the AI to be? What does it not yet know that I do? What does a good answer actually look like?* Put those three things in front of your request. That's 80% of the gain, available immediately.
 
-Then, when you want the full system — all six frameworks laid out, with the exact templates — I've made them free. You can [get the six frameworks here](/frameworks/). And if you'd rather skip straight to a hundred ready-to-run prompts built on them, each with its framework, template and adaptation notes, that's [the Vault](/vault/).
+Then, when you want the full system — all six frameworks laid out, with the exact templates — I've made them free. You can [get the six frameworks here](/frameworks/). And the hundred ready-to-run prompts built on them, each with its framework, template and adaptation notes, come with the book as the companion [Prompt Vault](/vault/) for readers.
 
 The consultants who win the next few years won't be the ones who resisted AI, and they won't be the ones who used it lazily as a faster search engine. They'll be the ones who learned to brief it like the sharp, fast, slightly over-eager associate it is — and gave it the structure to do genuinely good work.
 

@@ -1,102 +1,49 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import FaqSection from '../../components/FaqSection.astro';
 
-const VAULT_URL = 'https://iyad.lemonsqueezy.com/checkout/buy/efc6fe74-0a2e-441c-8831-675862e47618';
-
-const title = 'The Vault — 100 Consulting Super-Prompts | Iyad Barakat';
+const title = 'The Consulting Prompt Vault — companion resource for readers | Iyad Barakat';
 const description =
-  '100 ready-to-run consulting prompts — market entry, board decks, due diligence and more — each with its framework, template and adaptation notes. In a Notion workspace you copy and keep.';
-
-const faq = [
-  {
-    q: 'What exactly is the Vault?',
-    a: '100 ready-to-run consulting super-prompts in a Notion workspace you copy and keep. Each prompt comes with its framework, a fill-in template, and notes on how to adapt it to your engagement.',
-  },
-  {
-    q: 'Do I need to read the book first?',
-    a: 'No — the Vault stands on its own. If you do own The Consulting Prompt Playbook, redeem your Reader Bonus code for the $19 reader price.',
-  },
-  {
-    q: 'Which AI tools does it work with?',
-    a: 'All of them — ChatGPT, Claude, Gemini, Copilot. The prompts are model-agnostic; they shape how you brief the AI, not which one you use.',
-  },
-  {
-    q: 'How is it delivered?',
-    a: 'Instantly. You get a Notion workspace you duplicate and keep forever, including future updates to the prompt library.',
-  },
-  {
-    q: 'Is there a guarantee?',
-    a: 'Yes — every purchase is backed by a 14-day, no-questions-asked money-back guarantee.',
-  },
-];
+  'The Consulting Prompt Vault is the companion resource for readers of The Consulting Prompt Playbook — the 100 prompts from the book, organised by the six frameworks. Redeem the code from your copy.';
 ---
 <BaseLayout
   title={title}
   description={description}
   ogImage={new URL('/assets/og-vault.png', Astro.site).href}
-  noindex={true}
 >
   <section class="vault" id="vault-hero">
     <div class="wrap">
       <div class="section-head">
-        <div class="kicker">The Vault</div>
-        <h2>Stop rebuilding the same deliverables from scratch.</h2>
-        <p>100 ready-to-run consulting super-prompts — market entry assessments, board decks, due diligence, operating models and more. Each one is built on a framework, comes with a fill-in template, and tells you exactly how to adapt it. Blank page to board-ready in minutes.</p>
+        <div class="kicker">For readers</div>
+        <h2>The Consulting Prompt Vault</h2>
+        <p>The companion resource for readers of <em>The Consulting Prompt Playbook</em>: the 100 prompts referenced in the book, organised by the six frameworks — each with its template and adaptation notes, in a Notion workspace you copy and keep.</p>
       </div>
-      <div class="vault-cta">
-        <div class="vault-price">$39 <span style="font-size:15px;color:var(--grey);font-weight:400;">· book readers $19</span></div>
-        <a class="btn btn-gold" href={VAULT_URL} target="_blank" rel="noopener">Unlock the Vault →</a>
-      </div>
-      <p style="text-align:center;color:var(--grey);font-size:13.5px;margin-top:14px;">14-day, no-questions-asked money-back guarantee.</p>
     </div>
   </section>
 
-  <section class="frameworks" id="problem">
+  <section class="frameworks" id="redeem">
     <div class="wrap">
       <div class="section-head">
-        <h2>You already know the answer takes structure. You just don't have time to build it every time.</h2>
-        <p>The difference between a flat AI answer and a board-ready one is the brief — the role, the context, the ask, the standard. Getting that right from scratch, at 11pm, for the fortieth time this month, is the tax nobody wants to pay. The Vault pays it for you: the structure is already built, tested, and waiting. You bring the specifics; it brings the rigour.</p>
+        <div class="kicker">How to get it</div>
+        <h2>Redeem the code from your book.</h2>
+        <p>The Vault is a reader companion — it comes with the book. Your code is printed in the back matter of <em>The Consulting Prompt Playbook</em>. Enter it on the Reader Bonus page and we'll send your Vault link.</p>
       </div>
+      <div style="text-align:center;margin-top:8px;">
+        <a class="btn btn-gold" href="/bonus/">Redeem your reader code →</a>
+      </div>
+      <p style="text-align:center;color:var(--grey);font-size:14px;margin-top:18px;">Code not working? Email <a href="mailto:info@iyadbarakat.com" style="color:var(--navy);">info@iyadbarakat.com</a> with a photo of your receipt or the book page and we'll sort it out.</p>
     </div>
   </section>
 
-  <section class="frameworks" id="whats-inside">
+  <section class="vault" id="not-a-reader">
     <div class="wrap">
       <div class="section-head">
-        <div class="kicker">What's inside</div>
-        <h2>100 prompts, across the work you actually do.</h2>
-        <p>Organised by engagement type, each tagged with its framework and ready to adapt.</p>
+        <div class="kicker">Not a reader yet?</div>
+        <h2>The Vault code is inside the book.</h2>
+        <p>The book is available <a href="https://www.amazon.com/dp/B0G5HBCZG2" target="_blank" rel="noopener" style="color:var(--navy);">on Amazon</a> — the Vault code is inside. Prefer to start free? Get the six consulting AI frameworks (plus six sample prompts) by email below.</p>
       </div>
-      <div class="fw-grid">
-        <div class="fw-card"><span class="fw-tag">Strategy</span><h3>Market entry &amp; growth</h3><p>Entry assessments, growth options, opportunity sizing — structured for a decision, not a data dump.</p></div>
-        <div class="fw-card"><span class="fw-tag">Comms</span><h3>Board &amp; exec decks</h3><p>Board narratives, exec summaries, the difficult message — persuasive and defensible.</p></div>
-        <div class="fw-card"><span class="fw-tag">Diligence</span><h3>Due diligence</h3><p>Commercial, operational and risk reviews that stay focused instead of sprawling.</p></div>
-        <div class="fw-card"><span class="fw-tag">Ops</span><h3>Operating model &amp; cost</h3><p>Operating-model design, cost and margin analysis, transformation planning.</p></div>
-        <div class="fw-card"><span class="fw-tag">Research</span><h3>Research &amp; analysis</h3><p>Structured intelligence-gathering and synthesis for high-stakes calls.</p></div>
-        <div class="fw-card"><span class="fw-tag">Every prompt</span><h3>Framework + template + how to adapt</h3><p>Not just a prompt — the thinking behind it, and how to make it yours.</p></div>
+      <div class="newsletter-form" style="max-width:480px;margin:8px auto 0;">
+        <script is:inline async data-uid="e13384b663" src="https://iyad-barakat.kit.com/e13384b663/index.js"></script>
       </div>
     </div>
   </section>
-
-  <section class="vault" id="buy">
-    <div class="wrap">
-      <div class="section-head">
-        <div class="kicker">Get the Vault</div>
-        <h2>100 prompts. One Notion workspace. Yours to keep.</h2>
-        <p>Copy it into your own Notion once and it's yours forever — future updates included. Works with any AI.</p>
-      </div>
-      <div class="vault-cta">
-        <div class="vault-price">$39 <span style="font-size:15px;color:var(--grey);font-weight:400;">· book readers $19</span></div>
-        <a class="btn btn-gold" href={VAULT_URL} target="_blank" rel="noopener">Unlock the Vault →</a>
-      </div>
-      <div style="text-align:center;margin-top:20px;">
-        <p style="color:var(--grey);font-size:14px;margin-bottom:12px;">Bought the book? Redeem your Reader Bonus code for the $19 reader price.</p>
-        <a class="btn btn-ghost" href="/bonus/">Redeem Reader Bonus</a>
-      </div>
-      <p style="text-align:center;color:var(--grey);font-size:14.5px;margin-top:30px;">Want the whole system done for you — an AI assistant pre-loaded with the frameworks, 12 done-for-you playbooks and 100 advanced prompts? That's <a href="/operating-system/" style="color:var(--navy);">The Operating System</a>.</p>
-    </div>
-  </section>
-
-  <FaqSection items={faq} />
 </BaseLayout>

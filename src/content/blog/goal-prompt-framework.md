@@ -121,7 +121,7 @@ Fifteen seconds, four questions, on every prompt that matters. It is genuinely t
 
 ## Where to go next
 
-If you want the rest of the system, I've made it free. GOAL is the daily driver, but it's one of six frameworks — one each for professional deliverables, strategy, communication, research, and innovation — and you can [get all six here](/frameworks/). If you'd rather skip to a hundred ready-to-run prompts built on them, each tagged with its framework and template, that's [the Vault](/vault/).
+If you want the rest of the system, I've made it free. GOAL is the daily driver, but it's one of six frameworks — one each for professional deliverables, strategy, communication, research, and innovation — and you can [get all six here](/frameworks/). The hundred ready-to-run prompts built on them, each tagged with its framework and template, come with the book as the companion [Prompt Vault](/vault/) for readers.
 
 And if you haven't read it, the piece this one builds on — [why consultants should prompt with frameworks instead of one-liners](/blog/how-consultants-should-prompt-ai/) — is the argument underneath all of this.
 
